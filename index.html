@@ -5,69 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Avvocato Andrea Solari | Studio legale a Cagliari</title>
     <meta name="description" content="Avvocato Andrea Solari: consulenza e assistenza legale in diritto civile, penale e lavoro. Appuntamenti rapidi e trasparenti a Cagliari e online." />
+
+    <!-- CSS principale -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- CSS OVERRIDE (puoi spostarlo in assets/css/main.css) -->
-    <style>
-      /* ====== SFONDO CON NUOVO GRADIENTE E IMMAGINE ====== */
-      body{
-        background-color:#0f1825;
-        background-image:
-          linear-gradient(to top, rgba(12,16,28,0.96) 0%, rgba(34,44,72,0.9) 60%, rgba(48,58,92,0.85) 100%),
-          url("images/bg.jpg");
-        background-size:auto, cover;
-        background-attachment:fixed, fixed;
-        background-position:center, center;
-      }
-      /* riflesso dello sfondo del banner per rimuovere artefatti del tema */
-      #banner:before{transform:scaleX(-1);transform-origin:center}
-
-      /* ====== HEADER BUTTONS: dimensione identica + animazione ====== */
-      #header-buttons{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem}
-      #header-buttons .button{width:14rem;text-align:center;font-size:.95rem;padding:.7rem 1.25rem;border-radius:10px;opacity:0;transform:translateY(8px);animation:fadeUp .6s ease-out forwards}
-      #header-buttons .button:nth-child(1){animation-delay:.10s}
-      #header-buttons .button:nth-child(2){animation-delay:.25s}
-      #header-buttons .button:nth-child(3){animation-delay:.40s}
-
-      @keyframes fadeUp{to{opacity:1;transform:none}}
-
-      /* ====== BANNER / LOGO TONDO ACCANTO AL NOME (senza bordo) ====== */
-      #banner .inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem}
-      #banner .profile-section{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap}
-      #banner .profile-section img{width:110px;height:110px;border-radius:50%;object-fit:contain;background:transparent;border:none;box-shadow:none}
-
-      /* ====== LISTE: TAG | LINEA | TESTO (allineato) ====== */
-      .case-list{list-style:none;margin:0;padding:0}
-      .case-list li{display:grid;grid-template-columns:max-content 2px 1fr;column-gap:1rem;align-items:start;margin:.75rem 0}
-      .case-list .tag{justify-self:end;min-width:7rem;text-align:right;font-weight:600;font-size:.9rem;padding:.25rem .75rem;border-radius:999px;line-height:1}
-      .case-list .divider{width:2px;background:rgba(255,255,255,.28);height:auto;border-radius:1px}
-      .case-list .text{text-align:left}
-      .case-date{opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums}
-      .tag--civile{background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33}
-      .tag--lavoro{background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333}
-      .tag--penale{background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33}
-      .tag--impresa{background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033}
-
-      /* ====== CHI SONO ====== */
-      #about .about-grid{display:grid;grid-template-columns:300px 1fr;gap:2rem;align-items:center}
-      #about .about-photo{width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 16px rgba(0,0,0,.15)}
-      #about .content{display:flex;flex-direction:column;justify-content:center}
-      #about blockquote{margin-top:1rem;padding:1rem 1.25rem;border-left:4px solid rgba(255,255,255,.35);font-style:italic;opacity:.9}
-      @media(max-width:900px){#about .about-grid{grid-template-columns:1fr;align-items:start}#about .about-photo{max-width:100%}}
-
-      /* ====== SEPARATORE TRA SEZIONI ====== */
-      .section-sep{height:1px;background:rgba(255,255,255,.15);margin:2.5rem 0}
-    </style>
+    <!-- Google Fonts per switch dinamico dei font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
-  <body class="is-preload">
+  <body class="is-preload theme-1">
     <div id="page-wrapper">
 
       <!-- Header -->
       <header id="header" class="alt">
         <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
-        <nav><a href="#menu" aria-label="Apri menu">Menu</a></nav>
+
+        <nav>
+          <div class="controls">
+            <!-- Dropdown Tema -->
+            <div class="dropdown" id="dd-theme">
+              <div class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Tema ▾</div>
+              <div class="dropdown-menu" role="menu">
+                <button data-theme="theme-1">Notte blu (freddo)</button>
+                <button data-theme="theme-2">Antracite (neutro)</button>
+                <button data-theme="theme-3">Terra bruna (caldo)</button>
+                <button data-theme="theme-4">Verde scuro (elegante)</button>
+              </div>
+            </div>
+
+            <!-- Dropdown Font -->
+            <div class="dropdown" id="dd-font">
+              <div class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Font ▾</div>
+              <div class="dropdown-menu" role="menu">
+                <button data-font="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">Inter (moderno)</button>
+                <button data-font="Lato, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">Lato (pulito)</button>
+                <button data-font="'Merriweather', Georgia, 'Times New Roman', serif">Merriweather (serif)</button>
+                <button data-font="'Playfair Display', Georgia, 'Times New Roman', serif">Playfair (elegante)</button>
+              </div>
+            </div>
+
+            <a href="#menu" aria-label="Apri menu">Menu</a>
+          </div>
+        </nav>
       </header>
 
       <!-- Menu -->
@@ -90,13 +70,15 @@
       <section id="banner">
         <div class="inner">
           <div class="profile-section">
-            <!-- LOGO PNG nel cerchio, senza bordo -->
+            <!-- LOGO PNG nel cerchio, senza bordo/ombra -->
             <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" />
             <div class="text-section">
               <h2>Avvocato Andrea Solari</h2>
               <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
             </div>
           </div>
+
+          <!-- Bottoni principali -->
           <div id="header-buttons">
             <a href="#about" class="button">Chi sono</a>
             <a href="#cases" class="button">Casi recenti</a>
@@ -221,10 +203,57 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Switch dinamico Tema/Font + utilità -->
     <script>
       (function(){
-        var y=new Date().getFullYear();
-        var el=document.getElementById('year'); if(el) el.textContent=y;
+        // Persistenza tema/font + applicazione iniziale
+        var body = document.body;
+        var savedTheme = localStorage.getItem('site:theme');
+        var savedFont  = localStorage.getItem('site:font');
+        body.classList.remove('theme-1','theme-2','theme-3','theme-4');
+        body.classList.add(savedTheme || 'theme-1');
+        if(savedFont){ document.documentElement.style.setProperty('--font-base', savedFont); }
+
+        // Helper dropdown
+        function setupDropdown(id, onPick){
+          var dd = document.getElementById(id); if(!dd) return;
+          var toggle = dd.querySelector('.dropdown-toggle');
+          var menu = dd.querySelector('.dropdown-menu');
+          toggle.addEventListener('click', function(){
+            dd.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', dd.classList.contains('open'));
+          });
+          document.addEventListener('click', function(e){ if(!dd.contains(e.target)) dd.classList.remove('open'); });
+          menu.addEventListener('click', function(e){
+            if(e.target.tagName.toLowerCase() === 'button'){
+              onPick(e.target, dd);
+              dd.classList.remove('open');
+            }
+          });
+        }
+
+        // Tema
+        setupDropdown('dd-theme', function(btn){
+          var theme = btn.getAttribute('data-theme');
+          body.classList.remove('theme-1','theme-2','theme-3','theme-4');
+          body.classList.add(theme);
+          localStorage.setItem('site:theme', theme);
+          document.querySelectorAll('#dd-theme .dropdown-menu button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+        });
+        (function(){ var t = (localStorage.getItem('site:theme')||'theme-1'); var btn = document.querySelector('#dd-theme [data-theme="'+t+'"]'); if(btn) btn.classList.add('active'); })();
+
+        // Font
+        setupDropdown('dd-font', function(btn){
+          var font = btn.getAttribute('data-font');
+          document.documentElement.style.setProperty('--font-base', font);
+          localStorage.setItem('site:font', font);
+          document.querySelectorAll('#dd-font .dropdown-menu button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+        });
+        (function(){ var f = localStorage.getItem('site:font'); if(!f) return; document.querySelectorAll('#dd-font .dropdown-menu button').forEach(function(b){ if(b.getAttribute('data-font')===f) b.classList.add('active'); }); })();
+
+        // FAQ toggle + Anno footer
+        var y=new Date().getFullYear(); var el=document.getElementById('year'); if(el) el.textContent=y;
         var b=document.getElementById('faqBtn'); var p=document.getElementById('faqPanel');
         if(b && p){ b.addEventListener('click',function(e){ e.preventDefault(); p.style.display=p.style.display==='block'?'none':'block'; }); }
       })();
