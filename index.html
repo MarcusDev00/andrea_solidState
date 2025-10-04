@@ -20,6 +20,11 @@
       .tag--lavoro {background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333;}
       .tag--penale {background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33;}
       .tag--impresa {background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033;}
+      /* Header profile image */
+      #header .profile-pic {width:48px;height:48px;border-radius:50%;object-fit:cover;margin-left:.75rem;vertical-align:middle;border:2px solid rgba(255,255,255,0.3)}
+      /* Header buttons */
+      #header-buttons {display:flex;gap:.75rem;justify-content:center;margin-top:.75rem;}
+      #header-buttons .button {font-size:.9rem;padding:.5rem 1rem;}
     </style>
   </head>
   <body class="is-preload">
@@ -27,11 +32,23 @@
 
       <!-- Header -->
       <header id="header" class="alt">
-        <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
+        <div style="display:flex;align-items:center;gap:.75rem;">
+          <h1 style="display:flex;align-items:center;gap:.5rem;">
+            <a href="#banner">Avvocato Andrea Solari</a>
+            <img src="images/profile.jpg" alt="Foto profilo Avvocato Andrea Solari" class="profile-pic" />
+          </h1>
+        </div>
         <nav>
           <a href="#menu" aria-label="Apri menu">Menu</a>
         </nav>
       </header>
+
+      <!-- Header buttons -->
+      <div id="header-buttons">
+        <a href="#banner" class="button">Home</a>
+        <a href="#cases" class="button">Casi recenti</a>
+        <a href="#contact" class="button primary">Contattami</a>
+      </div>
 
       <!-- Menu -->
       <nav id="menu" aria-label="Menu principale">
@@ -64,10 +81,10 @@
             <h2 class="major">Aree di attività</h2>
             <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
             <ul class="case-list">
-              <li><span class="tag tag--civile">Civile</span><span class="divider" aria-hidden="true"></span><span class="text">Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
-              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider" aria-hidden="true"></span><span class="text">Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
-              <li><span class="tag tag--penale">Penale</span><span class="divider" aria-hidden="true"></span><span class="text">Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
-              <li><span class="tag tag--impresa">Impresa</span><span class="divider" aria-hidden="true"></span><span class="text">Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
+              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text">Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
+              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider"></span><span class="text">Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
+              <li><span class="tag tag--penale">Penale</span><span class="divider"></span><span class="text">Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
+              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text">Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
             </ul>
             <a href="#contact" class="special">Prenota un appuntamento</a>
           </div>
@@ -112,7 +129,7 @@
               <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">12/09/2025</span> — Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
               <li><span class="tag tag--lavoro">Lavoro</span><span class="divider"></span><span class="text"><span class="case-date">28/07/2025</span> — Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
               <li><span class="tag tag--penale">Penale</span><span class="divider"></span><span class="text"><span class="case-date">15/06/2025</span> — Difesa per furto aggravato – assoluzione in primo grado</span></li>
-              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e‑commerce</span></li>
+              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e-commerce</span></li>
               <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">18/03/2025</span> — Mediazione condominiale – riduzione spese straordinarie</span></li>
             </ul>
             <a href="#contact" class="special">Hai un caso simile?</a>
