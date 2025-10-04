@@ -4153,3 +4153,116 @@ input, select, textarea {
 
 	}
 
+/* ================================
+   TEMA VERDE SCURO — OVERRIDES
+   (incolla in fondo a main.css)
+   ================================ */
+:root{
+  --g-900:#0f2e1f; /* sfondo principale profondo */
+  --g-850:#103324;
+  --g-800:#133a28; /* spotlight base */
+  --g-750:#164130;
+  --g-700:#185239; /* spotlight più chiara */
+  --g-600:#1f6b4a; /* accenti */
+  --g-500:#2e8b57; /* accenti/primary */
+  --g-300:#79c3a4; /* hover/linee leggere */
+  --g-200:#a8d5c2; /* bordi chiari */
+  --txt:#ffffff;
+  --muted: rgba(255,255,255,.6);
+}
+
+/* Sfondo globale (se vuoi tutto sul verde) */
+body{
+  background-color: var(--g-900) !important;
+  background-image: linear-gradient(to top, rgba(15,46,31,.88), rgba(20,60,40,.88)) !important;
+  /* Se vuoi rimuovere l'immagine di bg.jpg, lascia solo le righe sopra
+     e togli url(...) dalla regola originale del body */
+}
+
+/* --- Sezioni spotlight ---------------------------------- */
+/* colore principale per ogni sezione (puoi variarlo a piacere) */
+.wrapper.spotlight.style1{ background-color: var(--g-800) !important; }
+.wrapper.spotlight.style2{ background-color: var(--g-750) !important; }
+.wrapper.spotlight.style3{ background-color: var(--g-700) !important; }
+
+/* alcuni temi HTML5UP usano overlay :before: forziamo anche quelli */
+.wrapper.spotlight.style1:before,
+.wrapper.spotlight.style2:before,
+.wrapper.spotlight.style3:before{
+  background: transparent !important; /* elimina overlay grigio/blu */
+}
+
+/* Titoli e underline “.major” dentro le spotlight */
+h1, h2, h3, h4, h5, h6{ color: var(--txt) !important; }
+h1.major, h2.major, h3.major, h4.major, h5.major, h6.major{
+  border-bottom-color: rgba(255,255,255,.15) !important;
+}
+
+/* Linee e box */
+hr{ border-bottom-color: rgba(255,255,255,.15) !important; }
+.box{ border-color: rgba(255,255,255,.15) !important; }
+
+/* --- Link & bottoni -------------------------------------- */
+a{ color: var(--g-200) !important; border-bottom-color: rgba(255,255,255,.25) !important; }
+a:hover{ color:#fff !important; }
+
+/* Bottoni generici */
+.button{ 
+  border-color: rgba(255,255,255,.2) !important; 
+  color: var(--txt) !important;
+}
+/* Primario (call to action) */
+.button.primary{
+  background: var(--g-500) !important;
+  border: none !important;
+  color: #fff !important;
+}
+.button:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+
+/* Pulsanti nel banner (se li hai resi same-size) */
+#header-buttons .button{ background: rgba(255,255,255,.06); }
+#header-buttons .button.primary{ background: var(--g-600) !important; }
+
+/* --- Form ------------------------------------------------ */
+input[type="text"], input[type="email"], input[type="tel"],
+select, textarea{
+  background: rgba(255,255,255,.03) !important;
+  border-color: rgba(255,255,255,.18) !important;
+  color: var(--txt) !important;
+}
+input:focus, select:focus, textarea:focus{
+  border-color: var(--g-300) !important;
+}
+
+/* --- Tag colorati (le “pilloline” delle aree) ------------ */
+.tag{ 
+  font-weight: 700; 
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: #e6fff4;
+}
+.tag--civile  { background: rgba(46, 204, 113,.15); color: #b9f2d5; border-color: rgba(46, 204, 113,.35); }
+.tag--lavoro  { background: rgba(39, 174, 96,.15);  color: #b9f2d5; border-color: rgba(39, 174, 96,.35); }
+.tag--penale  { background: rgba(22, 160, 133,.15); color: #b8efe6; border-color: rgba(22, 160, 133,.35); }
+.tag--impresa { background: rgba(31, 107, 74,.22);  color: #d4fff1; border-color: rgba(31, 107, 74,.45); }
+
+/* --- Header e menu -------------------------------------- */
+#header.alt{ background: linear-gradient(0deg, rgba(15,46,31,.0), rgba(15,46,31,.0)) !important; }
+#menu .inner{ background: var(--g-800) !important; }
+
+/* --- Footer --------------------------------------------- */
+#footer .inner{ background: var(--g-800) !important; }
+ul.contact li:before{ border-color: rgba(255,255,255,.18) !important; }
+
+/* --- Piccoli accenti ------------------------------------ */
+blockquote{ border-left-color: rgba(255,255,255,.2) !important; }
+code{ border-color: rgba(255,255,255,.2) !important; background: rgba(255,255,255,.06) !important; }
+
+/* Se usi “special” link (freccetta) */
+a.special:not(.button):before{
+  border-color: rgba(255,255,255,.2) !important;
+}
+a.special:not(.button):hover:before{
+  background-color: rgba(255,255,255,.06) !important;
+}
+
