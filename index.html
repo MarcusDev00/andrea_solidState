@@ -14,13 +14,13 @@
     <style>
       /* Casi recenti: allineamento e tag colorati */
       .case-list{list-style:none;margin:0;padding:0}
-      .case-list li{display:grid;grid-template-columns:max-content 1fr;gap:.75rem;align-items:start;margin:.5rem 0}
+      .case-list li{display:grid;grid-template-columns:max-content 10ch 1fr;gap:.75rem;align-items:start;margin:.5rem 0}
       .tag{font-weight:600;font-size:.9rem;padding:.15rem .5rem;border-radius:999px;line-height:1;white-space:nowrap}
       .tag--civile{background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33}
       .tag--lavoro{background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333}
       .tag--penale{background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33}
       .tag--impresa{background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033}
-      .case-date{opacity:.8;margin-right:.35rem}
+      .case-date{opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums;text-align:left}
     </style>
   </head>
   <body class="is-preload">
@@ -59,10 +59,7 @@
           <div class="logo" aria-hidden="true"><span class="icon fa-scale-balanced"></span></div>
           <h2>Avvocato Andrea Solari</h2>
           <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
-          <ul class="actions">
-            <li><a href="#cases" class="button">Vedi casi recenti</a></li>
-            <li><a href="#contact" class="button primary">Richiedi un consulto</a></li>
-          </ul>
+          
         </div>
       </section>
 
@@ -71,20 +68,20 @@
 
         <!-- Aree di attività -->
         <section id="practice" class="wrapper spotlight style1">
-          <div class="inner">
-            <div class="content">
-              <h2 class="major">Aree di attività</h2>
-              <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
-              <ul>
-                <li><strong>Diritto civile</strong>: contratti, responsabilità, proprietà, condominio, recupero crediti.</li>
-                <li><strong>Diritto del lavoro</strong>: licenziamenti, demansionamento, buste paga, disciplinare.</li>
-                <li><strong>Diritto penale</strong>: difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</li>
-                <li><strong>Consulenza alle imprese</strong>: compliance, condizioni generali, privacy by design.</li>
-              </ul>
-              <a href="#contact" class="special">Prenota un appuntamento</a>
-            </div>
-          </div>
-        </section>
+  <div class="inner">
+    <div class="content">
+      <h2 class="major">Aree di attività</h2>
+      <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
+      <ul class="case-list">
+        <li><span class="tag tag--civile">Civile</span><span class="case-date"></span><span>Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
+        <li><span class="tag tag--lavoro">Lavoro</span><span class="case-date"></span><span>Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
+        <li><span class="tag tag--penale">Penale</span><span class="case-date"></span><span>Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
+        <li><span class="tag tag--impresa">Impresa</span><span class="case-date"></span><span>Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
+      </ul>
+      <a href="#contact" class="special">Prenota un appuntamento</a>
+    </div>
+  </div>
+</section>
 
         <!-- Metodo di lavoro con FAQ -->
         <section id="approach" class="wrapper alt spotlight style2">
@@ -110,7 +107,7 @@
                   <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
                 </ul>
               </div>
-              <a href="#contact" class="special">Parliamone</a>
+              
             </div>
           </div>
         </section>
