@@ -1,86 +1,172 @@
-/* ====== Font di base (variabile) ====== */
+/* ====== FONT VARIABILE ====== */
 :root{
   --font-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 html, body { font-family: var(--font-base); }
 
-/* ====== Temi (gradiente + immagine) ====== */
+/* ====== RESET BASE ====== */
+* { box-sizing: border-box; }
+body { margin: 0; color: #fff; }
+a { color: #9cc3ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ====== TEMI (GRADIENTI + VARIABILI SEZIONI) ====== */
 body.theme-1{
+  --section-bg: rgba(18, 24, 40, 0.78);
+  --section-border: rgba(255,255,255,0.10);
+  --primary: #7aa7ff;
   background-color:#0f1825;
   background-image: linear-gradient(to top, rgba(12,16,28,0.96) 0%, rgba(34,44,72,0.9) 60%, rgba(48,58,92,0.85) 100%), url("../../images/bg.jpg");
   background-size: auto, cover; background-attachment: fixed, fixed; background-position: center, center;
 }
 body.theme-2{
+  --section-bg: rgba(22, 26, 38, 0.80);
+  --section-border: rgba(255,255,255,0.10);
+  --primary: #c6d0ff;
   background-color:#0f1520;
   background-image: linear-gradient(180deg, rgba(15,21,32,0.95) 0%, rgba(27,35,53,0.9) 50%, rgba(10,12,18,0.92) 100%), url("../../images/bg.jpg");
   background-size: auto, cover; background-attachment: fixed, fixed; background-position: center, center;
 }
 body.theme-3{
+  --section-bg: rgba(52, 30, 24, 0.80);
+  --section-border: rgba(255,255,255,0.10);
+  --primary: #ffb38a;
   background-color:#201614;
   background-image: linear-gradient(160deg, rgba(32,22,20,0.95) 0%, rgba(70,40,30,0.88) 55%, rgba(20,14,12,0.92) 100%), url("../../images/bg.jpg");
   background-size: auto, cover; background-attachment: fixed, fixed; background-position: center, center;
 }
 body.theme-4{
+  --section-bg: rgba(18, 38, 32, 0.82);
+  --section-border: rgba(255,255,255,0.10);
+  --primary: #8ae6c2;
   background-color:#101a17;
   background-image: radial-gradient(1200px 600px at 50% -10%, rgba(14,40,35,0.9) 0%, rgba(10,26,22,0.95) 40%, rgba(6,18,15,0.96) 100%), url("../../images/bg.jpg");
   background-size: auto, cover; background-attachment: fixed, fixed; background-position: center, center;
 }
 
-/* Riflesso sfondo del banner per evitare artefatti del tema */
+/* ====== LAYOUT BASE ====== */
+#page-wrapper { position: relative; }
+section { position: relative; }
+
+/* Banner artifact fix (manteniamo l'estetica Solid State) */
 #banner:before{ transform: scaleX(-1); transform-origin: center; }
 
-/* ====== Header: controlli e dropdown ====== */
-#header .controls{ display:flex; gap:.5rem; align-items:center; margin-right:.5rem }
+/* ====== HEADER ====== */
+#header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 8000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.8rem 1rem; background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+#header h1 { margin: 0; font-size: 1rem; letter-spacing: .3px; }
+#header h1 a { color: #fff; text-decoration: none; }
+#header .controls { display:flex; gap:.5rem; align-items:center; margin-right:.5rem; }
+#header .controls a[href="#menu"] {
+  padding:.45rem .75rem; border:1px solid rgba(255,255,255,.2);
+  border-radius:8px; font-size:.9rem; color:#fff; text-decoration:none;
+}
+
+/* ====== DROPDOWN ====== */
 .dropdown{ position:relative }
 .dropdown-toggle{
   cursor:pointer; display:inline-flex; align-items:center; gap:.4rem;
-  padding:.45rem .75rem; border:1px solid rgba(255,255,255,.2); border-radius:8px; font-size:.9rem;
+  padding:.45rem .75rem; border:1px solid rgba(255,255,255,.2); border-radius:8px;
+  font-size:.9rem; color:#fff;
 }
 .dropdown-menu{
   position:absolute; top:110%; right:0; min-width:190px;
   background:rgba(30,32,45,.98); backdrop-filter:saturate(120%) blur(6px);
-  border:1px solid rgba(255,255,255,.12); border-radius:10px; box-shadow:0 10px 24px rgba(0,0,0,.35);
-  padding:.4rem; display:none; z-index:1000;
+  border:1px solid rgba(255,255,255,.12); border-radius:10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  padding:.4rem; display:none; z-index:9500;
 }
 .dropdown.open .dropdown-menu{ display:block }
 .dropdown-menu button{
   width:100%; text-align:left; padding:.55rem .6rem; border-radius:8px; border:none;
-  background:transparent; color:inherit; cursor:pointer;
+  background:transparent; color:#fff; cursor:pointer;
 }
 .dropdown-menu button:hover{ background:rgba(255,255,255,.08) }
 .dropdown-menu button.active{ background:rgba(255,255,255,.16) }
 
-/* ====== Bottoni sotto header (uniformi + animazione) ====== */
-#header-buttons{ display:flex; gap:1rem; justify-content:center; margin-top:1.5rem; }
+/* ====== MENU OFF-CANVAS (compat con main.js del tema) ====== */
+#menu { z-index: 10000; } /* sovrappone il pannello menu ai dropdown */
+
+/* ====== BANNER ====== */
+#banner {
+  padding: 8rem 1rem 3rem; text-align:center;
+}
+#banner .inner {
+  max-width: 980px; margin: 0 auto;
+  display:flex; flex-direction:column; align-items:center; gap: 1rem;
+}
+#banner .profile-section{
+  display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;
+}
+#banner .profile-section img{
+  width: 64px; height: 64px; border-radius: 50%;
+  object-fit: contain; background: transparent; border: none; box-shadow: none;
+}
+#header-buttons {
+  display:flex; gap:1rem; justify-content:center; margin-top:1.2rem;
+}
 #header-buttons .button{
-  width:14rem; text-align:center; font-size:.95rem; padding:.7rem 1.25rem; border-radius:10px;
-  opacity:0; transform:translateY(8px); animation:fadeUp .6s ease-out forwards;
+  width:14rem; text-align:center; font-size:.95rem; padding:.7rem 1.25rem;
+  border-radius:10px; opacity:0; transform:translateY(8px);
+  animation:fadeUp .6s ease-out forwards;
 }
 #header-buttons .button:nth-child(1){ animation-delay:.10s }
 #header-buttons .button:nth-child(2){ animation-delay:.25s }
 #header-buttons .button:nth-child(3){ animation-delay:.40s }
 @keyframes fadeUp{ to{ opacity:1; transform:none } }
 
-/* ====== Banner / Logo cerchio (senza bordo) ====== */
-#banner .inner{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:1rem; }
-#banner .profile-section{ display:flex; align-items:center; justify-content:center; gap:1.2rem; flex-wrap:wrap; }
-#banner .profile-section img{
-  width:110px; height:110px; border-radius:50%; object-fit:contain; background:transparent; border:none; box-shadow:none;
+/* ====== BUTTON ====== */
+.button, .button.primary {
+  display:inline-block; cursor:pointer; color:#fff; text-decoration:none;
+  background: transparent; border:1px solid rgba(255,255,255,.25);
+  transition: transform .12s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  pointer-events: auto;
+}
+.button:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.45); }
+.button.primary { background: var(--primary); border-color: transparent; color: #0b0f18; }
+.button.primary:hover { filter: brightness(1.07); }
+
+/* ====== SEZIONI (seguono il tema attivo) ====== */
+.wrapper .inner { max-width: 980px; margin: 0 auto; padding: 3rem 1rem; }
+.wrapper.style1, .wrapper.style2, .wrapper.style3,
+.wrapper.alt.style1, .wrapper.alt.style2, .wrapper.alt.style3,
+.spotlight.style1, .spotlight.style2, .spotlight.style3 {
+  background: var(--section-bg);
+  border: 1px solid var(--section-border);
+  border-radius: 12px;
+  backdrop-filter: saturate(120%) blur(2px);
 }
 
-/* ====== Liste casi: TAG | LINEA | TESTO allineato ====== */
+/* spegni overlay blu/immagini del tema base */
+#banner:before,
+.wrapper:before, .wrapper.alt:before,
+.spotlight:before, .spotlight .image:before,
+.wrapper .inner:before, .spotlight .content:before {
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+/* ====== LISTE: TAG | LINEA | TESTO ====== */
 .case-list{ list-style:none; margin:0; padding:0 }
 .case-list li{ display:grid; grid-template-columns:max-content 2px 1fr; column-gap:1rem; align-items:start; margin:.75rem 0 }
 .case-list .tag{ justify-self:end; min-width:7rem; text-align:right; font-weight:600; font-size:.9rem; padding:.25rem .75rem; border-radius:999px; line-height:1 }
 .case-list .divider{ width:2px; background:rgba(255,255,255,.28); height:auto; border-radius:1px }
 .case-list .text{ text-align:left }
 .case-date{ opacity:.8; margin-right:.35rem; font-variant-numeric:tabular-nums }
+/* colori tag */
 .tag--civile{ background:#2a84ff1a; color:#2a84ff; border:1px solid #2a84ff33 }
 .tag--lavoro{ background:#ffb7031a; color:#ffb703; border:1px solid #ffb70333 }
 .tag--penale{ background:#ef476f1a; color:#ef476f; border:1px solid #ef476f33 }
 .tag--impresa{ background:#06d6a01a; color:#06d6a0; border:1px solid #06d6a033 }
 
-/* ====== Sezione Chi sono ====== */
+/* ====== ABOUT ====== */
 #about .about-grid{ display:grid; grid-template-columns:300px 1fr; gap:2rem; align-items:center }
 #about .about-photo{
   width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; border-radius:10px;
@@ -88,10 +174,27 @@ body.theme-4{
 }
 #about .content{ display:flex; flex-direction:column; justify-content:center }
 #about blockquote{ margin-top:1rem; padding:1rem 1.25rem; border-left:4px solid rgba(255,255,255,.35); font-style:italic; opacity:.9 }
-@media(max-width:900px){
-  #about .about-grid{ grid-template-columns:1fr; align-items:start }
-  #about .about-photo{ max-width:100% }
-}
 
-/* ====== Separatore generico ====== */
+/* ====== SEPARATORE ====== */
 .section-sep{ height:1px; background:rgba(255,255,255,.15); margin:2.5rem 0 }
+
+/* ====== FOOTER ====== */
+#footer .inner { max-width:980px; margin:0 auto; padding:3rem 1rem; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 980px) {
+  #header .controls { gap: .35rem; }
+  .dropdown-toggle { padding: .4rem .6rem; font-size: .85rem; }
+}
+@media (max-width: 736px) {
+  #header { padding: .65rem .75rem; }
+  #header .controls { flex-wrap: wrap; justify-content: flex-end; }
+  #header .controls a[href="#menu"] { order: 3; }
+  #banner { padding-top: 7rem; }
+  .wrapper .inner { padding-top: 2rem; padding-bottom: 2rem; }
+}
+@media (max-width: 480px) {
+  #header-buttons { flex-direction: column; align-items: stretch; gap: .6rem; }
+  #header-buttons .button { width: 100%; }
+  #banner .profile-section { flex-direction: column; gap: .75rem; }
+}
