@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+    <!-- Stili inline per test (puoi spostarli in assets/css/main.css quando vuoi) -->
     <style>
       /* ===== Banner più grande + logo più grande ===== */
       #banner { padding: 6rem 0; }
-      #banner .inner { max-width: 1100px; }
+      #banner .inner { max-width: 1100px; margin: 0 auto; }
       #banner h2 { font-size: clamp(2rem, 3.2vw, 2.6rem); line-height: 1.15; }
 
       /* Logo + testo nel banner */
@@ -24,7 +25,7 @@
         text-align: left;
       }
       .profile-section .logo-lg {
-        width: 120px;
+        width: 120px;   /* logo più grande */
         height: auto;
         border-radius: 50%;
         object-fit: contain;
@@ -70,7 +71,7 @@
       .about-grid .content { order: 1; flex: 1 1 420px; }
       .about-grid .about-photo {
         order: 2;
-        width: clamp(260px, 32vw, 420px);
+        width: clamp(260px, 32vw, 420px); /* più grande ma responsive */
         max-width: 100%;
         height: auto;
         border-radius: 12px;
@@ -113,6 +114,7 @@
       <section id="banner">
         <div class="inner">
           <div class="profile-section">
+            <!-- Logo ridimensionato e allineato a sinistra -->
             <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" class="logo-lg" />
             <div class="text-section">
               <h2>Avvocato Andrea Solari</h2>
@@ -148,8 +150,90 @@
         </div>
       </section>
 
-      <!-- Il resto del sito (practice, approach, cases, footer) resta invariato -->
-      <!-- ... -->
+      <!-- Aree di attività -->
+      <section id="practice" class="wrapper spotlight style1">
+        <div class="inner">
+          <div class="content">
+            <h2 class="major">Aree di attività</h2>
+            <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
+            <ul class="case-list">
+              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text">Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
+              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider"></span><span class="text">Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
+              <li><span class="tag tag--penale">Penale</span><span class="divider"></span><span class="text">Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
+              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text">Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
+            </ul>
+            <a href="#contact" class="special">Prenota un appuntamento</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metodo di lavoro -->
+      <section id="approach" class="wrapper alt spotlight style2">
+        <div class="inner">
+          <div class="content">
+            <h2 class="major">Metodo di lavoro</h2>
+            <p><strong>Ascolto</strong> e analisi preliminare, <strong>preventivo trasparente</strong>, strategia condivisa e aggiornamenti costanti. Possibilità di consulenza da remoto.</p>
+            <ul>
+              <li>Primo inquadramento del caso (30 minuti).</li>
+              <li>Preventivo scritto e chiaro.</li>
+              <li>Report periodici sull'andamento.</li>
+            </ul>
+            <div style="margin-top:1rem"><a href="#" id="faqBtn" class="button small">FAQ</a></div>
+            <div id="faqPanel" class="style3" style="display:none;margin-top:1rem">
+              <h3 class="major" style="margin-bottom:.5rem">Domande frequenti</h3>
+              <ul>
+                <li><strong>Quanto costa il primo consulto?</strong> Il primo inquadramento (30 min) è gratuito; eventuale approfondimento viene preventivato.</li>
+                <li><strong>Posso avere assistenza da remoto?</strong> Sì, via videochiamata o telefono, con firma digitale ove necessario.</li>
+                <li><strong>Come funziona il preventivo?</strong> Riceverai un preventivo scritto con tempi e attività; nessun costo nascosto.</li>
+                <li><strong>In quanto tempo rispondete?</strong> Di norma entro 24 ore lavorative.</li>
+                <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Casi recenti -->
+      <section id="cases" class="wrapper spotlight style3">
+        <div class="inner">
+          <div class="content">
+            <h2 class="major">Casi recenti</h2>
+            <p>Di seguito alcuni esempi sintetici. I dati sono anonimizzati nel rispetto della deontologia professionale.</p>
+            <ul class="case-list">
+              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">12/09/2025</span> — Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
+              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider"></span><span class="text"><span class="case-date">28/07/2025</span> — Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
+              <li><span class="tag tag--penale">Penale</span><span class="divider"></span><span class="text"><span class="case-date">15/06/2025</span> — Difesa per furto aggravato – assoluzione in primo grado</span></li>
+              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e-commerce</span></li>
+              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">18/03/2025</span> — Mediazione condominiale – riduzione spese straordinarie</span></li>
+            </ul>
+            <a href="#contact" class="special">Hai un caso simile?</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="inner">
+          <h2 class="major">Contatti</h2>
+          <form id="contact" method="post" action="#">
+            <div class="fields">
+              <div class="field"><label for="name">Nome e Cognome</label><input type="text" name="name" id="name" required /></div>
+              <div class="field"><label for="email">Email</label><input type="email" name="email" id="email" required /></div>
+              <div class="field"><label for="message">Messaggio</label><textarea name="message" id="message" rows="5" required></textarea></div>
+            </div>
+            <ul class="actions"><li><input type="submit" value="Invia richiesta" /></li></ul>
+          </form>
+          <ul class="contact">
+            <li class="icon solid fa-home">Studio Avv. Andrea Solari<br />Via Roma 123<br />09100 Cagliari (CA)</li>
+            <li class="icon solid fa-phone">+39 070 000 0000</li>
+            <li class="icon solid fa-envelope"><a href="mailto:info@avvocatosolari.it">info@avvocatosolari.it</a></li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; <span id="year"></span> Avvocato Andrea Solari. Tutti i diritti riservati.</li>
+          </ul>
+        </div>
+      </section>
+
     </div>
 
     <!-- Scripts -->
