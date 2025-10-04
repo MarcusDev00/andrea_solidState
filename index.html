@@ -5,52 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Avvocato Andrea Solari | Studio legale a Cagliari</title>
     <meta name="description" content="Avvocato Andrea Solari: consulenza e assistenza legale in diritto civile, penale e lavoro. Appuntamenti rapidi e trasparenti a Cagliari e online." />
-
-    <!-- CSS principale -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-    <!-- Google Fonts per il cambio dinamico -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
-
-  <body class="is-preload theme-1">
+  <body class="is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
       <header id="header" class="alt">
         <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
-
-        <nav>
-          <div class="controls">
-            <!-- Dropdown Tema -->
-            <div class="dropdown" id="dd-theme">
-              <div class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Tema ▾</div>
-              <div class="dropdown-menu" role="menu">
-                <button data-theme="theme-1">Notte blu (freddo)</button>
-                <button data-theme="theme-2">Antracite (neutro)</button>
-                <button data-theme="theme-3">Terra bruna (caldo)</button>
-                <button data-theme="theme-4">Verde scuro (elegante)</button>
-              </div>
-            </div>
-
-            <!-- Dropdown Font -->
-            <div class="dropdown" id="dd-font">
-              <div class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Font ▾</div>
-              <div class="dropdown-menu" role="menu">
-                <button data-font="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">Inter (moderno)</button>
-                <button data-font="Lato, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">Lato (pulito)</button>
-                <button data-font="'Merriweather', Georgia, 'Times New Roman', serif">Merriweather (serif)</button>
-                <button data-font="'Playfair Display', Georgia, 'Times New Roman', serif">Playfair (elegante)</button>
-              </div>
-            </div>
-
-            <a href="#menu" aria-label="Apri menu">Menu</a>
-          </div>
-        </nav>
+        <nav><a href="#menu" aria-label="Apri menu">Menu</a></nav>
       </header>
 
-      <!-- Menu (off-canvas Solid State) -->
+      <!-- Menu -->
       <nav id="menu" aria-label="Menu principale">
         <div class="inner">
           <h2>Menu</h2>
@@ -70,15 +37,13 @@
       <section id="banner">
         <div class="inner">
           <div class="profile-section">
-            <!-- LOGO PNG nel cerchio, senza bordo/ombra -->
+            <!-- Logo nel cerchio -->
             <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" />
             <div class="text-section">
               <h2>Avvocato Andrea Solari</h2>
               <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
             </div>
           </div>
-
-          <!-- Bottoni principali -->
           <div id="header-buttons">
             <a href="#about" class="button">Chi sono</a>
             <a href="#cases" class="button">Casi recenti</a>
@@ -107,8 +72,6 @@
           </div>
         </div>
       </section>
-
-      <div class="section-sep" aria-hidden="true"></div>
 
       <!-- Aree di attività -->
       <section id="practice" class="wrapper spotlight style1">
@@ -193,85 +156,29 @@
           </ul>
         </div>
       </section>
-
     </div>
 
-    <!-- Scripts Solid State -->
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <!-- Switch dinamico Tema/Font + fix interazioni -->
     <script>
       (function(){
-        // Persistenza tema/font + applicazione iniziale
-        var body = document.body;
-        var savedTheme = localStorage.getItem('site:theme');
-        var savedFont  = localStorage.getItem('site:font');
-        body.classList.remove('theme-1','theme-2','theme-3','theme-4');
-        body.classList.add(savedTheme || 'theme-1');
-        if(savedFont){ document.documentElement.style.setProperty('--font-base', savedFont); }
+        var y = new Date().getFullYear();
+        var el = document.getElementById('year');
+        if (el) el.textContent = y;
 
-        // Helper dropdown
-        function setupDropdown(id, onPick){
-          var dd = document.getElementById(id); if(!dd) return;
-          var toggle = dd.querySelector('.dropdown-toggle');
-          var menu = dd.querySelector('.dropdown-menu');
-
-          toggle.addEventListener('click', function(e){
-            e.stopPropagation();
-            dd.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', dd.classList.contains('open'));
-          });
-
-          document.addEventListener('click', function(e){
-            if(!dd.contains(e.target)) dd.classList.remove('open');
-          });
-
-          menu.addEventListener('click', function(e){
-            if(e.target.tagName.toLowerCase() === 'button'){
-              onPick(e.target, dd);
-              dd.classList.remove('open');
-            }
+        var b = document.getElementById('faqBtn');
+        var p = document.getElementById('faqPanel');
+        if(b && p){
+          b.addEventListener('click', function(e){
+            e.preventDefault();
+            p.style.display = p.style.display==='block'?'none':'block';
           });
         }
-
-        // Tema
-        setupDropdown('dd-theme', function(btn){
-          var theme = btn.getAttribute('data-theme');
-          body.classList.remove('theme-1','theme-2','theme-3','theme-4');
-          body.classList.add(theme);
-          localStorage.setItem('site:theme', theme);
-          document.querySelectorAll('#dd-theme .dropdown-menu button').forEach(function(b){ b.classList.toggle('active', b===btn); });
-        });
-        (function(){
-          var t = localStorage.getItem('site:theme') || 'theme-1';
-          var btn = document.querySelector('#dd-theme [data-theme="'+t+'"]');
-          if(btn) btn.classList.add('active');
-        })();
-
-        // Font
-        setupDropdown('dd-font', function(btn){
-          var font = btn.getAttribute('data-font');
-          document.documentElement.style.setProperty('--font-base', font);
-          localStorage.setItem('site:font', font);
-          document.querySelectorAll('#dd-font .dropdown-menu button').forEach(function(b){ b.classList.toggle('active', b===btn); });
-        });
-        (function(){
-          var f = localStorage.getItem('site:font');
-          if(!f) return;
-          document.querySelectorAll('#dd-font .dropdown-menu button').forEach(function(b){
-            if(b.getAttribute('data-font')===f) b.classList.add('active');
-          });
-        })();
-
-        // FAQ toggle + Anno footer
-        var y=new Date().getFullYear(); var el=document.getElementById('year'); if(el) el.textContent=y;
-        var b=document.getElementById('faqBtn'); var p=document.getElementById('faqPanel');
-        if(b && p){ b.addEventListener('click',function(e){ e.preventDefault(); p.style.display=p.style.display==='block'?'none':'block'; }); }
       })();
     </script>
   </body>
