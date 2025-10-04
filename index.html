@@ -1,8 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-  Solid State by HTML5 UP (html5up.net)
-  Adapted for a professional law firm website
--->
 <html lang="it">
   <head>
     <meta charset="utf-8" />
@@ -12,28 +8,27 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-      /* Casi recenti: allineamento e tag colorati */
-      .case-list{list-style:none;margin:0;padding:0}
-      .case-list li{display:grid;grid-template-columns:max-content 10ch 1fr;gap:.75rem;align-items:start;margin:.5rem 0}
-      .tag{font-weight:600;font-size:.9rem;padding:.15rem .5rem;border-radius:999px;line-height:1;white-space:nowrap}
+      /* Layout per allineare i testi dopo la linea verticale */
+      .case-list{list-style:none;margin:0;padding:0;border-left:2px solid rgba(255,255,255,0.2);padding-left:1.5rem}
+      .case-list li{display:flex;align-items:flex-start;margin:.75rem 0}
+      .case-list .tag{flex-shrink:0;min-width:6rem;text-align:right;font-weight:600;font-size:.9rem;padding:.25rem .75rem;border-radius:999px;line-height:1;margin-right:1rem}
+      .case-list .text{flex:1}
+
+      /* Colori tag coerenti */
       .tag--civile{background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33}
       .tag--lavoro{background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333}
       .tag--penale{background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33}
       .tag--impresa{background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033}
-      .case-date{opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums;text-align:left}
+      .case-date{opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums}
     </style>
   </head>
   <body class="is-preload">
-
-    <!-- Page Wrapper -->
     <div id="page-wrapper">
 
       <!-- Header -->
       <header id="header" class="alt">
-        <h1><a href="#banner" aria-label="Vai all'inizio">Avvocato Andrea Solari</a></h1>
+        <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
         <nav>
-          <a href="#cases" class="button small">Casi recenti</a>
-          <a href="#contact" class="button small primary">Contattami</a>
           <a href="#menu" aria-label="Apri menu">Menu</a>
         </nav>
       </header>
@@ -49,17 +44,16 @@
             <li><a href="#cases">Casi recenti</a></li>
             <li><a href="#contact">Contatti</a></li>
           </ul>
-          <a href="#" class="close" aria-label="Chiudi menu">Chiudi</a>
+          <a href="#" class="close">Chiudi</a>
         </div>
       </nav>
 
-      <!-- Banner / Hero -->
-      <section id="banner" role="banner" aria-label="Intestazione">
+      <!-- Banner -->
+      <section id="banner">
         <div class="inner">
-          <div class="logo" aria-hidden="true"><span class="icon fa-scale-balanced"></span></div>
+          <div class="logo"><span class="icon fa-scale-balanced"></span></div>
           <h2>Avvocato Andrea Solari</h2>
           <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
-          
         </div>
       </section>
 
@@ -68,22 +62,22 @@
 
         <!-- Aree di attività -->
         <section id="practice" class="wrapper spotlight style1">
-  <div class="inner">
-    <div class="content">
-      <h2 class="major">Aree di attività</h2>
-      <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
-      <ul class="case-list">
-        <li><span class="tag tag--civile">Civile</span><span class="case-date"></span><span>Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
-        <li><span class="tag tag--lavoro">Lavoro</span><span class="case-date"></span><span>Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
-        <li><span class="tag tag--penale">Penale</span><span class="case-date"></span><span>Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
-        <li><span class="tag tag--impresa">Impresa</span><span class="case-date"></span><span>Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
-      </ul>
-      <a href="#contact" class="special">Prenota un appuntamento</a>
-    </div>
-  </div>
-</section>
+          <div class="inner">
+            <div class="content">
+              <h2 class="major">Aree di attività</h2>
+              <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
+              <ul class="case-list">
+                <li><span class="tag tag--civile">Civile</span><span class="text">Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
+                <li><span class="tag tag--lavoro">Lavoro</span><span class="text">Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
+                <li><span class="tag tag--penale">Penale</span><span class="text">Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
+                <li><span class="tag tag--impresa">Impresa</span><span class="text">Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
+              </ul>
+              <a href="#contact" class="special">Prenota un appuntamento</a>
+            </div>
+          </div>
+        </section>
 
-        <!-- Metodo di lavoro con FAQ -->
+        <!-- Metodo di lavoro -->
         <section id="approach" class="wrapper alt spotlight style2">
           <div class="inner">
             <div class="content">
@@ -107,23 +101,22 @@
                   <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
                 </ul>
               </div>
-              
             </div>
           </div>
         </section>
 
         <!-- Casi recenti -->
-        <section id="cases" class="wrapper spotlight style3" aria-labelledby="cases-title">
+        <section id="cases" class="wrapper spotlight style3">
           <div class="inner">
             <div class="content">
-              <h2 class="major" id="cases-title">Casi recenti</h2>
+              <h2 class="major">Casi recenti</h2>
               <p>Di seguito alcuni esempi sintetici. I dati sono anonimizzati nel rispetto della deontologia professionale.</p>
               <ul class="case-list">
-                <li><span class="tag tag--civile">Civile</span><span class="case-text"><span class="case-date">[12/09/2025]</span>Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
-                <li><span class="tag tag--lavoro">Lavoro</span><span class="case-text"><span class="case-date">[28/07/2025]</span>Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
-                <li><span class="tag tag--penale">Penale</span><span class="case-text"><span class="case-date">[15/06/2025]</span>Difesa per furto aggravato – assoluzione in primo grado</span></li>
-                <li><span class="tag tag--impresa">Impresa</span><span class="case-text"><span class="case-date">[02/05/2025]</span>Redazione condizioni generali e privacy policy e‑commerce</span></li>
-                <li><span class="tag tag--civile">Civile</span><span class="case-text"><span class="case-date">[18/03/2025]</span>Mediazione condominiale – riduzione spese straordinarie</span></li>
+                <li><span class="tag tag--civile">Civile</span><span class="text"><span class="case-date">12/09/2025</span> — Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
+                <li><span class="tag tag--lavoro">Lavoro</span><span class="text"><span class="case-date">28/07/2025</span> — Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
+                <li><span class="tag tag--penale">Penale</span><span class="text"><span class="case-date">15/06/2025</span> — Difesa per furto aggravato – assoluzione in primo grado</span></li>
+                <li><span class="tag tag--impresa">Impresa</span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e‑commerce</span></li>
+                <li><span class="tag tag--civile">Civile</span><span class="text"><span class="case-date">18/03/2025</span> — Mediazione condominiale – riduzione spese straordinarie</span></li>
               </ul>
               <a href="#contact" class="special">Hai un caso simile?</a>
             </div>
@@ -132,51 +125,31 @@
 
       </section>
 
-      <!-- Contatti / Footer con form email -->
+      <!-- Footer -->
       <section id="footer">
         <div class="inner">
           <h2 class="major">Contatti</h2>
-          <p>Compila il form per un primo contatto. Riceverai una risposta entro 24 ore lavorative.</p>
           <form id="contact" method="post" action="#">
             <div class="fields">
-              <div class="field">
-                <label for="name">Nome e Cognome</label>
-                <input type="text" name="name" id="name" required />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required />
-              </div>
-              <div class="field">
-                <label for="message">Messaggio</label>
-                <textarea name="message" id="message" rows="5" required></textarea>
-              </div>
+              <div class="field"><label for="name">Nome e Cognome</label><input type="text" name="name" id="name" required /></div>
+              <div class="field"><label for="email">Email</label><input type="email" name="email" id="email" required /></div>
+              <div class="field"><label for="message">Messaggio</label><textarea name="message" id="message" rows="5" required></textarea></div>
             </div>
-            <ul class="actions">
-              <li><input type="submit" value="Invia richiesta" /></li>
-            </ul>
+            <ul class="actions"><li><input type="submit" value="Invia richiesta" /></li></ul>
           </form>
-
           <ul class="contact">
-            <li class="icon solid fa-home">
-              Studio Avv. Andrea Solari<br />
-              Via Roma 123<br />
-              09100 Cagliari (CA)
-            </li>
+            <li class="icon solid fa-home">Studio Avv. Andrea Solari<br />Via Roma 123<br />09100 Cagliari (CA)</li>
             <li class="icon solid fa-phone">+39 070 000 0000</li>
             <li class="icon solid fa-envelope"><a href="mailto:info@avvocatosolari.it">info@avvocatosolari.it</a></li>
-            <li class="icon brands fa-linkedin"><a href="#">linkedin.com/in/avv-andrea-solari</a></li>
           </ul>
           <ul class="copyright">
             <li>&copy; <span id="year"></span> Avvocato Andrea Solari. Tutti i diritti riservati.</li>
-            <li>Design: <a href="http://html5up.net" rel="noopener">HTML5 UP</a></li>
           </ul>
         </div>
       </section>
 
     </div>
 
-    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -184,7 +157,6 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-      // Aggiorna l'anno e gestisci FAQ
       (function(){
         var y = new Date().getFullYear();
         var el = document.getElementById('year');
@@ -194,12 +166,10 @@
         if(b && p){
           b.addEventListener('click', function(e){
             e.preventDefault();
-            var open = p.style.display !== 'none';
-            p.style.display = open ? 'none' : 'block';
+            p.style.display = p.style.display==='block'?'none':'block';
           });
         }
       })();
     </script>
-
   </body>
 </html>
