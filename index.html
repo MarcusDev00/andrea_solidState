@@ -34,23 +34,60 @@
       </nav>
 
       <!-- Banner -->
-      <section id="banner">
-        <div class="inner">
-          <div class="profile-section">
-            <!-- Logo nel cerchio -->
-            <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" />
-            <div class="text-section">
-              <h2>Avvocato Andrea Solari</h2>
-              <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
-            </div>
-          </div>
-          <div id="header-buttons">
-            <a href="#about" class="button">Chi sono</a>
-            <a href="#cases" class="button">Casi recenti</a>
-            <a href="#contact" class="button primary">Contattami</a>
-          </div>
-        </div>
-      </section>
+     <!-- Banner -->
+<section id="banner">
+  <div class="inner">
+    <div class="profile-section">
+      <!-- Logo ridimensionato e allineato a sinistra -->
+      <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" class="logo-small" />
+      <div class="text-section">
+        <h2>Avvocato Andrea Solari</h2>
+        <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
+      </div>
+    </div>
+    <div id="header-buttons">
+      <a href="#about" class="button">Chi sono</a>
+      <a href="#cases" class="button">Casi recenti</a>
+      <a href="#contact" class="button primary">Contattami</a>
+    </div>
+  </div>
+
+  <!-- Stili inline per test: sposta in assets/css/main.css se vuoi mantenerli -->
+  <style>
+    .profile-section {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .profile-section .logo-small {
+      width: 80px; /* puoi ridurre/incrementare a piacere */
+      height: auto;
+      border-radius: 50%; /* mantiene il cerchio */
+      object-fit: contain;
+    }
+
+    .text-section {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    @media (max-width: 600px) {
+      .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .profile-section .logo-small {
+        width: 90px;
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+</section>
 
       <!-- Chi sono -->
       <section id="about" class="wrapper spotlight style1">
@@ -183,3 +220,4 @@
     </script>
   </body>
 </html>
+
