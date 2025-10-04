@@ -27,6 +27,11 @@
       #banner h2 {margin:0;}
       #header-buttons {display:flex;gap:.75rem;justify-content:center;margin-top:2rem;}
       #header-buttons .button {font-size:.9rem;padding:.6rem 1.25rem;}
+      /* Chi sono */
+      #about .about-grid{display:grid;grid-template-columns:360px 1fr;gap:2rem;align-items:start}
+      #about .about-photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.2)}
+      #about blockquote{margin:1rem 0 0;padding:1rem 1.25rem;border-left:4px solid rgba(255,255,255,0.35);font-style:italic;opacity:.9}
+      @media(max-width: 900px){#about .about-grid{grid-template-columns:1fr}}
     </style>
   </head>
   <body class="is-preload">
@@ -45,12 +50,13 @@
         <div class="inner">
           <h2>Menu</h2>
           <ul class="links">
-            <li><a href="#banner">Home</a></li>
-            <li><a href="#practice">Aree di attività</a></li>
-            <li><a href="#approach">Metodo di lavoro</a></li>
-            <li><a href="#cases">Casi recenti</a></li>
-            <li><a href="#contact">Contatti</a></li>
-          </ul>
+  <li><a href="#banner">Home</a></li>
+  <li><a href="#about">Chi sono</a></li>
+  <li><a href="#practice">Aree di attività</a></li>
+  <li><a href="#approach">Metodo di lavoro</a></li>
+  <li><a href="#cases">Casi recenti</a></li>
+  <li><a href="#contact">Contatti</a></li>
+</ul>
           <a href="#" class="close">Chiudi</a>
         </div>
       </nav>
@@ -66,14 +72,35 @@
             </div>
           </div>
           <div id="header-buttons">
-            <a href="#cases" class="button">Casi recenti</a>
-            <a href="#contact" class="button primary">Contattami</a>
-          </div>
+  <a href="#about" class="button">Chi sono</a>
+  <a href="#cases" class="button">Casi recenti</a>
+  <a href="#contact" class="button primary">Contattami</a>
+</div>
         </div>
       </section>
 
       <!-- Aree di attività -->
-      <section id="practice" class="wrapper spotlight style1">
+      <section id="about" class="wrapper spotlight style1">
+  <div class="inner">
+    <div class="about-grid">
+      <img src="images/pic02.jpg" alt="Ritratto dell'Avv. Andrea Solari" class="about-photo" />
+      <div class="content">
+        <h2 class="major">Chi sono</h2>
+        <p>Sono <strong>Andrea Solari</strong>, avvocato iscritto all’Ordine degli Avvocati di Cagliari. Mi occupo principalmente di diritto civile, lavoro e penale, affiancando privati e imprese con un approccio pratico e orientato ai risultati.</p>
+        <ul>
+          <li><strong>Lauree</strong>: Laurea Magistrale in Giurisprudenza (UniCA), tesi in responsabilità civile.</li>
+          <li><strong>Abilitazione</strong>: Esame di Stato superato – iscritto all’Albo dal 2018.</li>
+          <li><strong>Esperienze</strong>: contenzioso civile e del lavoro; difesa penale; consulenza contrattuale e compliance per PMI e startup.</li>
+          <li><strong>Formazione continua</strong>: privacy e protezione dati, diritto delle nuove tecnologie, ADR e mediazione.</li>
+          <li><strong>Lingue</strong>: italiano, inglese.</li>
+        </ul>
+        <blockquote>“Chiarezza, tempestività e strategia condivisa: il cliente deve sapere sempre dove stiamo andando.”</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="wrapper spotlight style1">
         <div class="inner">
           <div class="content">
             <h2 class="major">Aree di attività</h2>
