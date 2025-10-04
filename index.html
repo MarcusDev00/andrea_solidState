@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Stili inline per test (puoi spostarli in assets/css/main.css quando vuoi) -->
+    <!-- 🔷 Tutto lo stile inline -->
     <style>
       /* ===== Banner più grande + logo più grande ===== */
-      #banner { padding: 6rem 0; }
+      #banner { padding: 6rem 0; text-align: center; }
       #banner .inner { max-width: 1100px; margin: 0 auto; }
       #banner h2 { font-size: clamp(2rem, 3.2vw, 2.6rem); line-height: 1.15; }
 
@@ -19,13 +19,13 @@
       .profile-section {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 1.2rem;
         flex-wrap: wrap;
         text-align: left;
       }
       .profile-section .logo-lg {
-        width: 120px;   /* logo più grande */
+        width: 120px;
         height: auto;
         border-radius: 50%;
         object-fit: contain;
@@ -36,6 +36,45 @@
         #banner { padding: 4rem 0; }
         .profile-section { flex-direction: column; align-items: center; text-align: center; }
         .profile-section .logo-lg { width: 110px; }
+      }
+
+      /* ===== Bottoni del banner: centrati, uguali e animati ===== */
+      #header-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1s ease forwards 0.5s;
+      }
+
+      #header-buttons .button.same-size {
+        min-width: 160px;
+        text-align: center;
+        padding: 0.8rem 1.2rem;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      #header-buttons .button.primary {
+        background-color: #004aad;
+        color: #fff;
+        border: none;
+      }
+
+      #header-buttons .button:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       /* ===== Tag colorati ===== */
@@ -71,7 +110,7 @@
       .about-grid .content { order: 1; flex: 1 1 420px; }
       .about-grid .about-photo {
         order: 2;
-        width: clamp(260px, 32vw, 420px); /* più grande ma responsive */
+        width: clamp(260px, 32vw, 420px);
         max-width: 100%;
         height: auto;
         border-radius: 12px;
@@ -114,17 +153,18 @@
       <section id="banner">
         <div class="inner">
           <div class="profile-section">
-            <!-- Logo ridimensionato e allineato a sinistra -->
             <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" class="logo-lg" />
             <div class="text-section">
               <h2>Avvocato Andrea Solari</h2>
               <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
             </div>
           </div>
-          <div id="header-buttons">
-            <a href="#about" class="button">Chi sono</a>
-            <a href="#cases" class="button">Casi recenti</a>
-            <a href="#contact" class="button primary">Contattami</a>
+
+          <!-- Bottoni centrati e uguali -->
+          <div id="header-buttons" class="button-group">
+            <a href="#about" class="button same-size">Chi sono</a>
+            <a href="#cases" class="button same-size">Casi recenti</a>
+            <a href="#contact" class="button same-size primary">Contattami</a>
           </div>
         </div>
       </section>
