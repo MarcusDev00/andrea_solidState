@@ -7,42 +7,134 @@
     <meta name="description" content="Avvocato Andrea Solari: consulenza e assistenza legale in diritto civile, penale e lavoro. Appuntamenti rapidi e trasparenti a Cagliari e online." />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
     <style>
-      /* Layout: TAG | LINEA | TESTO allineato a sinistra */
-      .case-list {list-style:none;margin:0;padding:0;}
-      .case-list li {display:grid;grid-template-columns:max-content 2px 1fr;column-gap:1rem;align-items:start;margin:.75rem 0;}
-      .case-list .tag {justify-self:end;min-width:7rem;text-align:right;font-weight:600;font-size:.9rem;padding:.25rem .75rem;border-radius:999px;line-height:1;}
-      .case-list .divider {width:2px;background:rgba(255,255,255,.28);height:auto;border-radius:1px;}
-      .case-list .text {text-align:left;}
-      .case-date {opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums;}
-      /* Colori tag */
-      .tag--civile {background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33;}
-      .tag--lavoro {background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333;}
-      .tag--penale {background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33;}
-      .tag--impresa {background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033;}
-      /* Banner layout con immagine profilo */
-      #banner .inner {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem;}
-      #banner .profile-section {display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
-      #banner .profile-section img {width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.3);box-shadow:0 0 15px rgba(0,0,0,0.2);}
-      #banner h2 {margin:0;}
-      #header-buttons {display:flex;gap:.75rem;justify-content:center;margin-top:2rem;}
-      #header-buttons .button {font-size:.9rem;padding:.6rem 1.25rem;}
-      /* Chi sono */
-      #about .about-grid{display:grid;grid-template-columns:360px 1fr;gap:2rem;align-items:start}
-      #about .about-photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.2)}
-      #about blockquote{margin:1rem 0 0;padding:1rem 1.25rem;border-left:4px solid rgba(255,255,255,0.35);font-style:italic;opacity:.9}
-      @media(max-width: 900px){#about .about-grid{grid-template-columns:1fr}}
+      /* --- BOTTONI UNIFORMI E TRANSIZIONE FADEUP --- */
+      #header-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+      #header-buttons .button {
+        width: 14rem;
+        text-align: center;
+        font-size: .95rem;
+        padding: .7rem 1.25rem;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(8px);
+        animation: fadeUp .6s ease-out forwards;
+      }
+      #header-buttons .button:nth-child(1){animation-delay:.1s}
+      #header-buttons .button:nth-child(2){animation-delay:.25s}
+      #header-buttons .button:nth-child(3){animation-delay:.4s}
+      @keyframes fadeUp{to{opacity:1;transform:none}}
+
+      /* --- LOGO PNG SOPRA HEADER --- */
+      #top-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+      #top-logo img {
+        height: 60px;
+        width: auto;
+        display: block;
+      }
+
+      /* --- BANNER / PROFILO --- */
+      #banner .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+      }
+      #banner .profile-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      #banner .profile-section img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255,255,255,0.3);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      }
+
+      /* --- SFONDO CON NUOVO GRADIENTE --- */
+      body {
+        background-color: #0f1825;
+        background-image:
+          linear-gradient(to top, rgba(10,15,25,0.95), rgba(45,55,80,0.85)),
+          url("images/bg.jpg");
+        background-size: auto, cover;
+        background-attachment: fixed, fixed;
+        background-position: center, center;
+      }
+
+      /* --- SEPARATORE TRA SEZIONI --- */
+      .section-sep {
+        height: 1px;
+        background: rgba(255,255,255,.15);
+        margin: 2.5rem 0;
+      }
+
+      /* --- CHI SONO --- */
+      #about .about-grid {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      #about .about-photo {
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.25);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      }
+      #about .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #about blockquote {
+        margin-top: 1rem;
+        padding: 1rem 1.25rem;
+        border-left: 4px solid rgba(255,255,255,0.35);
+        font-style: italic;
+        opacity: .9;
+      }
+      @media(max-width:900px){
+        #about .about-grid{grid-template-columns:1fr;align-items:start}
+        #about .about-photo{max-width:100%}
+      }
+
     </style>
   </head>
+
   <body class="is-preload">
     <div id="page-wrapper">
+
+      <!-- Logo -->
+      <div id="top-logo">
+        <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" />
+      </div>
 
       <!-- Header -->
       <header id="header" class="alt">
         <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
-        <nav>
-          <a href="#menu" aria-label="Apri menu">Menu</a>
-        </nav>
+        <nav><a href="#menu" aria-label="Apri menu">Menu</a></nav>
       </header>
 
       <!-- Menu -->
@@ -50,13 +142,13 @@
         <div class="inner">
           <h2>Menu</h2>
           <ul class="links">
-  <li><a href="#banner">Home</a></li>
-  <li><a href="#about">Chi sono</a></li>
-  <li><a href="#practice">Aree di attività</a></li>
-  <li><a href="#approach">Metodo di lavoro</a></li>
-  <li><a href="#cases">Casi recenti</a></li>
-  <li><a href="#contact">Contatti</a></li>
-</ul>
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#about">Chi sono</a></li>
+            <li><a href="#practice">Aree di attività</a></li>
+            <li><a href="#approach">Metodo di lavoro</a></li>
+            <li><a href="#cases">Casi recenti</a></li>
+            <li><a href="#contact">Contatti</a></li>
+          </ul>
           <a href="#" class="close">Chiudi</a>
         </div>
       </nav>
@@ -72,35 +164,38 @@
             </div>
           </div>
           <div id="header-buttons">
-  <a href="#about" class="button">Chi sono</a>
-  <a href="#cases" class="button">Casi recenti</a>
-  <a href="#contact" class="button primary">Contattami</a>
-</div>
+            <a href="#about" class="button">Chi sono</a>
+            <a href="#cases" class="button">Casi recenti</a>
+            <a href="#contact" class="button primary">Contattami</a>
+          </div>
         </div>
       </section>
 
-      <!-- Aree di attività -->
+      <!-- Chi sono -->
       <section id="about" class="wrapper spotlight style1">
-  <div class="inner">
-    <div class="about-grid">
-      <img src="images/pic02.jpg" alt="Ritratto dell'Avv. Andrea Solari" class="about-photo" />
-      <div class="content">
-        <h2 class="major">Chi sono</h2>
-        <p>Sono <strong>Andrea Solari</strong>, avvocato iscritto all’Ordine degli Avvocati di Cagliari. Mi occupo principalmente di diritto civile, lavoro e penale, affiancando privati e imprese con un approccio pratico e orientato ai risultati.</p>
-        <ul>
-          <li><strong>Lauree</strong>: Laurea Magistrale in Giurisprudenza (UniCA), tesi in responsabilità civile.</li>
-          <li><strong>Abilitazione</strong>: Esame di Stato superato – iscritto all’Albo dal 2018.</li>
-          <li><strong>Esperienze</strong>: contenzioso civile e del lavoro; difesa penale; consulenza contrattuale e compliance per PMI e startup.</li>
-          <li><strong>Formazione continua</strong>: privacy e protezione dati, diritto delle nuove tecnologie, ADR e mediazione.</li>
-          <li><strong>Lingue</strong>: italiano, inglese.</li>
-        </ul>
-        <blockquote>“Chiarezza, tempestività e strategia condivisa: il cliente deve sapere sempre dove stiamo andando.”</blockquote>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="inner">
+          <div class="about-grid">
+            <img src="images/pic02.jpg" alt="Ritratto dell'Avv. Andrea Solari" class="about-photo" />
+            <div class="content">
+              <h2 class="major">Chi sono</h2>
+              <p>Sono <strong>Andrea Solari</strong>, avvocato iscritto all’Ordine degli Avvocati di Cagliari. Mi occupo principalmente di diritto civile, lavoro e penale, affiancando privati e imprese con un approccio pratico e orientato ai risultati.</p>
+              <ul>
+                <li><strong>Lauree</strong>: Laurea Magistrale in Giurisprudenza (UniCA), tesi in responsabilità civile.</li>
+                <li><strong>Abilitazione</strong>: Esame di Stato superato – iscritto all’Albo dal 2018.</li>
+                <li><strong>Esperienze</strong>: contenzioso civile e del lavoro; difesa penale; consulenza contrattuale e compliance per PMI e startup.</li>
+                <li><strong>Formazione continua</strong>: privacy e protezione dati, diritto delle nuove tecnologie, ADR e mediazione.</li>
+                <li><strong>Lingue</strong>: italiano, inglese.</li>
+              </ul>
+              <blockquote>“Chiarezza, tempestività e strategia condivisa: il cliente deve sapere sempre dove stiamo andando.”</blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="practice" class="wrapper spotlight style1">
+      <div class="section-sep" aria-hidden="true"></div>
+
+      <!-- Aree di attività -->
+      <section id="practice" class="wrapper spotlight style1">
         <div class="inner">
           <div class="content">
             <h2 class="major">Aree di attività</h2>
@@ -127,9 +222,7 @@
               <li>Preventivo scritto e chiaro.</li>
               <li>Report periodici sull'andamento.</li>
             </ul>
-            <div style="margin-top:1rem">
-              <a href="#" id="faqBtn" class="button small">FAQ</a>
-            </div>
+            <div style="margin-top:1rem"><a href="#" id="faqBtn" class="button small">FAQ</a></div>
             <div id="faqPanel" class="style3" style="display:none;margin-top:1rem">
               <h3 class="major" style="margin-bottom:.5rem">Domande frequenti</h3>
               <ul>
@@ -140,24 +233,6 @@
                 <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Casi recenti -->
-      <section id="cases" class="wrapper spotlight style3">
-        <div class="inner">
-          <div class="content">
-            <h2 class="major">Casi recenti</h2>
-            <p>Di seguito alcuni esempi sintetici. I dati sono anonimizzati nel rispetto della deontologia professionale.</p>
-            <ul class="case-list">
-              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">12/09/2025</span> — Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
-              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider"></span><span class="text"><span class="case-date">28/07/2025</span> — Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
-              <li><span class="tag tag--penale">Penale</span><span class="divider"></span><span class="text"><span class="case-date">15/06/2025</span> — Difesa per furto aggravato – assoluzione in primo grado</span></li>
-              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e-commerce</span></li>
-              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">18/03/2025</span> — Mediazione condominiale – riduzione spese straordinarie</span></li>
-            </ul>
-            <a href="#contact" class="special">Hai un caso simile?</a>
           </div>
         </div>
       </section>
@@ -184,8 +259,10 @@
           </ul>
         </div>
       </section>
+
     </div>
 
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -195,12 +272,11 @@
     <script>
       (function(){
         var y = new Date().getFullYear();
-        var el = document.getElementById('year');
-        if (el) el.textContent = y;
+        document.getElementById('year').textContent = y;
         var b = document.getElementById('faqBtn');
         var p = document.getElementById('faqPanel');
         if(b && p){
-          b.addEventListener('click', function(e){
+          b.addEventListener('click', e=>{
             e.preventDefault();
             p.style.display = p.style.display==='block'?'none':'block';
           });
