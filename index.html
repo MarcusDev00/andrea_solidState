@@ -5,72 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Avvocato Andrea Solari | Studio legale a Cagliari</title>
     <meta name="description" content="Avvocato Andrea Solari: consulenza e assistenza legale in diritto civile, penale e lavoro. Appuntamenti rapidi e trasparenti a Cagliari e online." />
+
+    <!-- CSS principale -->
     <link rel="stylesheet" href="assets/css/main.css" />
-    <!-- Google Fonts for dynamic font switch -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- CSS OVERRIDE (puoi spostarlo in assets/css/main.css) -->
-    <style>
-      /* ===== Root variables (font) ===== */
-      :root{ --font-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
-      html, body{ font-family: var(--font-base); }
-
-      /* ===== Themes (background gradients) ===== */
-      body.theme-1{ background-color:#0f1825; background-image: linear-gradient(to top, rgba(12,16,28,0.96) 0%, rgba(34,44,72,0.9) 60%, rgba(48,58,92,0.85) 100%), url("images/bg.jpg"); background-size:auto,cover; background-attachment:fixed,fixed; background-position:center,center; }
-      body.theme-2{ background-color:#0f1520; background-image: linear-gradient(180deg, rgba(15,21,32,0.95) 0%, rgba(27,35,53,0.9) 50%, rgba(10,12,18,0.92) 100%), url("images/bg.jpg"); background-size:auto,cover; background-attachment:fixed,fixed; background-position:center,center; }
-      body.theme-3{ background-color:#201614; background-image: linear-gradient(160deg, rgba(32,22,20,0.95) 0%, rgba(70,40,30,0.88) 55%, rgba(20,14,12,0.92) 100%), url("images/bg.jpg"); background-size:auto,cover; background-attachment:fixed,fixed; background-position:center,center; }
-      body.theme-4{ background-color:#101a17; background-image: radial-gradient(1200px 600px at 50% -10%, rgba(14,40,35,0.9) 0%, rgba(10,26,22,0.95) 40%, rgba(6,18,15,0.96) 100%), url("images/bg.jpg"); background-size:auto,cover; background-attachment:fixed,fixed; background-position:center,center; }
-
-      /* Reflect banner background to avoid artifact */
-      #banner:before{ transform: scaleX(-1); transform-origin: center; }
-
-      /* ===== Header buttons (uniform + animation) ===== */
-      #header-buttons{ display:flex; gap:1rem; justify-content:center; margin-top:1.5rem }
-      #header-buttons .button{ width:14rem; text-align:center; font-size:.95rem; padding:.7rem 1.25rem; border-radius:10px; opacity:0; transform:translateY(8px); animation:fadeUp .6s ease-out forwards }
-      #header-buttons .button:nth-child(1){ animation-delay:.10s }
-      #header-buttons .button:nth-child(2){ animation-delay:.25s }
-      #header-buttons .button:nth-child(3){ animation-delay:.40s }
-      @keyframes fadeUp{ to{ opacity:1; transform:none } }
-
-      /* ===== Banner / logo circle (smaller) ===== */
-      #banner .inner{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:1rem }
-      #banner .profile-section{ display:flex; align-items:center; justify-content:center; gap:1.0rem; flex-wrap:wrap }
-      #banner .profile-section img{ width:72px; height:72px; border-radius:50%; object-fit:contain; background:transparent; border:none; box-shadow:none }
-      @media(max-width: 640px){ #banner .profile-section img{ width:64px; height:64px } }
-
-      /* ===== Lists: TAG | LINE | TEXT ===== */
-      .case-list{ list-style:none; margin:0; padding:0 }
-      .case-list li{ display:grid; grid-template-columns:max-content 2px 1fr; column-gap:1rem; align-items:start; margin:.75rem 0 }
-      .case-list .tag{ justify-self:end; min-width:7rem; text-align:right; font-weight:600; font-size:.9rem; padding:.25rem .75rem; border-radius:999px; line-height:1 }
-      .case-list .divider{ width:2px; background:rgba(255,255,255,.28); height:auto; border-radius:1px }
-      .case-list .text{ text-align:left }
-      .case-date{ opacity:.8; margin-right:.35rem; font-variant-numeric:tabular-nums }
-      .tag--civile{ background:#2a84ff1a; color:#2a84ff; border:1px solid #2a84ff33 }
-      .tag--lavoro{ background:#ffb7031a; color:#ffb703; border:1px solid #ffb70333 }
-      .tag--penale{ background:#ef476f1a; color:#ef476f; border:1px solid #ef476f33 }
-      .tag--impresa{ background:#06d6a01a; color:#06d6a0; border:1px solid #06d6a033 }
-
-      /* ===== About ===== */
-      #about .about-grid{ display:grid; grid-template-columns:300px 1fr; gap:2rem; align-items:center }
-      #about .about-photo{ width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; border-radius:10px; border:1px solid rgba(255,255,255,.25); box-shadow:0 4px 16px rgba(0,0,0,.15) }
-      #about .content{ display:flex; flex-direction:column; justify-content:center }
-      #about blockquote{ margin-top:1rem; padding:1rem 1.25rem; border-left:4px solid rgba(255,255,255,.35); font-style:italic; opacity:.9 }
-      @media(max-width:900px){ #about .about-grid{ grid-template-columns:1fr; align-items:start } #about .about-photo{ max-width:100% } }
-
-      /* ===== Separator ===== */
-      .section-sep{ height:1px; background:rgba(255,255,255,.15); margin:2.5rem 0 }
-
-      /* ===== Header dropdowns ===== */
-      #header .controls{ display:flex; gap:.5rem; align-items:center; margin-right:.5rem }
-      .dropdown{ position:relative }
-      .dropdown-toggle{ cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; padding:.45rem .75rem; border:1px solid rgba(255,255,255,.2); border-radius:8px; font-size:.9rem }
-      .dropdown-menu{ position:absolute; top:110%; right:0; min-width:190px; background:rgba(30,32,45,.98); backdrop-filter:saturate(120%) blur(6px); border:1px solid rgba(255,255,255,.12); border-radius:10px; box-shadow:0 10px 24px rgba(0,0,0,.35); padding:.4rem; display:none; z-index:1000 }
-      .dropdown.open .dropdown-menu{ display:block }
-      .dropdown-menu button{ width:100%; text-align:left; padding:.55rem .6rem; border-radius:8px; border:none; background:transparent; color:inherit; cursor:pointer }
-      .dropdown-menu button:hover{ background:rgba(255,255,255,.08) }
-      .dropdown-menu button.active{ background:rgba(255,255,255,.16) }
-    </style>
+    <!-- Google Fonts per il cambio dinamico -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
   <body class="is-preload theme-1">
@@ -79,8 +20,10 @@
       <!-- Header -->
       <header id="header" class="alt">
         <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
+
         <nav>
           <div class="controls">
+            <!-- Dropdown Tema -->
             <div class="dropdown" id="dd-theme">
               <div class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Tema ▾</div>
               <div class="dropdown-menu" role="menu">
@@ -90,6 +33,8 @@
                 <button data-theme="theme-4">Verde scuro (elegante)</button>
               </div>
             </div>
+
+            <!-- Dropdown Font -->
             <div class="dropdown" id="dd-font">
               <div class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Font ▾</div>
               <div class="dropdown-menu" role="menu">
@@ -99,12 +44,13 @@
                 <button data-font="'Playfair Display', Georgia, 'Times New Roman', serif">Playfair (elegante)</button>
               </div>
             </div>
+
             <a href="#menu" aria-label="Apri menu">Menu</a>
           </div>
         </nav>
       </header>
 
-      <!-- Menu -->
+      <!-- Menu (off-canvas Solid State) -->
       <nav id="menu" aria-label="Menu principale">
         <div class="inner">
           <h2>Menu</h2>
@@ -124,13 +70,15 @@
       <section id="banner">
         <div class="inner">
           <div class="profile-section">
-            <!-- LOGO PNG nel cerchio, senza bordo -->
+            <!-- LOGO PNG nel cerchio, senza bordo/ombra -->
             <img src="images/logo.png" alt="Logo Avvocato Andrea Solari" />
             <div class="text-section">
               <h2>Avvocato Andrea Solari</h2>
               <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
             </div>
           </div>
+
+          <!-- Bottoni principali -->
           <div id="header-buttons">
             <a href="#about" class="button">Chi sono</a>
             <a href="#cases" class="button">Casi recenti</a>
@@ -248,16 +196,18 @@
 
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts Solid State -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Switch dinamico Tema/Font + fix interazioni -->
     <script>
       (function(){
-        // Apply saved theme/font or defaults
+        // Persistenza tema/font + applicazione iniziale
         var body = document.body;
         var savedTheme = localStorage.getItem('site:theme');
         var savedFont  = localStorage.getItem('site:font');
@@ -265,16 +215,22 @@
         body.classList.add(savedTheme || 'theme-1');
         if(savedFont){ document.documentElement.style.setProperty('--font-base', savedFont); }
 
-        // Generic dropdown setup
+        // Helper dropdown
         function setupDropdown(id, onPick){
           var dd = document.getElementById(id); if(!dd) return;
           var toggle = dd.querySelector('.dropdown-toggle');
           var menu = dd.querySelector('.dropdown-menu');
-          toggle.addEventListener('click', function(){
+
+          toggle.addEventListener('click', function(e){
+            e.stopPropagation();
             dd.classList.toggle('open');
             toggle.setAttribute('aria-expanded', dd.classList.contains('open'));
           });
-          document.addEventListener('click', function(e){ if(!dd.contains(e.target)) dd.classList.remove('open'); });
+
+          document.addEventListener('click', function(e){
+            if(!dd.contains(e.target)) dd.classList.remove('open');
+          });
+
           menu.addEventListener('click', function(e){
             if(e.target.tagName.toLowerCase() === 'button'){
               onPick(e.target, dd);
@@ -283,7 +239,7 @@
           });
         }
 
-        // Theme picker
+        // Tema
         setupDropdown('dd-theme', function(btn){
           var theme = btn.getAttribute('data-theme');
           body.classList.remove('theme-1','theme-2','theme-3','theme-4');
@@ -291,20 +247,28 @@
           localStorage.setItem('site:theme', theme);
           document.querySelectorAll('#dd-theme .dropdown-menu button').forEach(function(b){ b.classList.toggle('active', b===btn); });
         });
-        // Mark current theme active
-        (function(){ var t = (localStorage.getItem('site:theme')||'theme-1'); var btn = document.querySelector('#dd-theme [data-theme="'+t+'"]'); if(btn) btn.classList.add('active'); })();
+        (function(){
+          var t = localStorage.getItem('site:theme') || 'theme-1';
+          var btn = document.querySelector('#dd-theme [data-theme="'+t+'"]');
+          if(btn) btn.classList.add('active');
+        })();
 
-        // Font picker
+        // Font
         setupDropdown('dd-font', function(btn){
           var font = btn.getAttribute('data-font');
           document.documentElement.style.setProperty('--font-base', font);
           localStorage.setItem('site:font', font);
           document.querySelectorAll('#dd-font .dropdown-menu button').forEach(function(b){ b.classList.toggle('active', b===btn); });
         });
-        // Mark current font active
-        (function(){ var f = localStorage.getItem('site:font'); if(!f) return; var btns = document.querySelectorAll('#dd-font .dropdown-menu button'); btns.forEach(function(b){ if(b.getAttribute('data-font')===f) b.classList.add('active'); }); })();
+        (function(){
+          var f = localStorage.getItem('site:font');
+          if(!f) return;
+          document.querySelectorAll('#dd-font .dropdown-menu button').forEach(function(b){
+            if(b.getAttribute('data-font')===f) b.classList.add('active');
+          });
+        })();
 
-        // Existing FAQ toggle & year
+        // FAQ toggle + Anno footer
         var y=new Date().getFullYear(); var el=document.getElementById('year'); if(el) el.textContent=y;
         var b=document.getElementById('faqBtn'); var p=document.getElementById('faqPanel');
         if(b && p){ b.addEventListener('click',function(e){ e.preventDefault(); p.style.display=p.style.display==='block'?'none':'block'; }); }
