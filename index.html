@@ -20,11 +20,13 @@
       .tag--lavoro {background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333;}
       .tag--penale {background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33;}
       .tag--impresa {background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033;}
-      /* Header profile image */
-      #header .profile-pic {width:48px;height:48px;border-radius:50%;object-fit:cover;margin-left:.75rem;vertical-align:middle;border:2px solid rgba(255,255,255,0.3)}
-      /* Header buttons */
-      #header-buttons {display:flex;gap:.75rem;justify-content:center;margin-top:.75rem;}
-      #header-buttons .button {font-size:.9rem;padding:.5rem 1rem;}
+      /* Banner layout con immagine profilo */
+      #banner .inner {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem;}
+      #banner .profile-section {display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+      #banner .profile-section img {width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.3);box-shadow:0 0 15px rgba(0,0,0,0.2);}
+      #banner h2 {margin:0;}
+      #header-buttons {display:flex;gap:.75rem;justify-content:center;margin-top:2rem;}
+      #header-buttons .button {font-size:.9rem;padding:.6rem 1.25rem;}
     </style>
   </head>
   <body class="is-preload">
@@ -32,23 +34,11 @@
 
       <!-- Header -->
       <header id="header" class="alt">
-        <div style="display:flex;align-items:center;gap:.75rem;">
-          <h1 style="display:flex;align-items:center;gap:.5rem;">
-            <a href="#banner">Avvocato Andrea Solari</a>
-            <img src="images/profile.jpg" alt="Foto profilo Avvocato Andrea Solari" class="profile-pic" />
-          </h1>
-        </div>
+        <h1><a href="#banner">Avvocato Andrea Solari</a></h1>
         <nav>
           <a href="#menu" aria-label="Apri menu">Menu</a>
         </nav>
       </header>
-
-      <!-- Header buttons -->
-      <div id="header-buttons">
-        <a href="#banner" class="button">Home</a>
-        <a href="#cases" class="button">Casi recenti</a>
-        <a href="#contact" class="button primary">Contattami</a>
-      </div>
 
       <!-- Menu -->
       <nav id="menu" aria-label="Menu principale">
@@ -68,9 +58,17 @@
       <!-- Banner -->
       <section id="banner">
         <div class="inner">
-          <div class="logo"><span class="icon fa-scale-balanced"></span></div>
-          <h2>Avvocato Andrea Solari</h2>
-          <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
+          <div class="profile-section">
+            <img src="images/pic01.jpg" alt="Avvocato Andrea Solari" />
+            <div class="text-section">
+              <h2>Avvocato Andrea Solari</h2>
+              <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
+            </div>
+          </div>
+          <div id="header-buttons">
+            <a href="#cases" class="button">Casi recenti</a>
+            <a href="#contact" class="button primary">Contattami</a>
+          </div>
         </div>
       </section>
 
