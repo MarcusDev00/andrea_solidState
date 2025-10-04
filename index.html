@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-  /* Lista a tre colonne: TAG | LINEA | TESTO */
-  .case-list{list-style:none;margin:0;padding:0}
-  .case-list li{display:grid;grid-template-columns:max-content 2px 1fr;column-gap:1rem;align-items:start;margin:.75rem 0}
-  .case-list .tag{justify-self:end;min-width:7rem;text-align:right;font-weight:600;font-size:.9rem;padding:.25rem .75rem;border-radius:999px;line-height:1}
-  .case-list .divider{width:2px;background:rgba(255,255,255,.28);height:100%;border-radius:1px}
-  .case-list .text{flex:1}
-  .case-date{opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums}
-  /* Colori tag */
-  .tag--civile{background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33}
-  .tag--lavoro{background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333}
-  .tag--penale{background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33}
-  .tag--impresa{background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033}
-</style>
+      /* Layout: TAG | LINEA | TESTO allineato a sinistra */
+      .case-list {list-style:none;margin:0;padding:0;}
+      .case-list li {display:grid;grid-template-columns:max-content 2px 1fr;column-gap:1rem;align-items:start;margin:.75rem 0;}
+      .case-list .tag {justify-self:end;min-width:7rem;text-align:right;font-weight:600;font-size:.9rem;padding:.25rem .75rem;border-radius:999px;line-height:1;}
+      .case-list .divider {width:2px;background:rgba(255,255,255,.28);height:auto;border-radius:1px;}
+      .case-list .text {text-align:left;}
+      .case-date {opacity:.8;margin-right:.35rem;font-variant-numeric:tabular-nums;}
+      /* Colori tag */
+      .tag--civile {background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33;}
+      .tag--lavoro {background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333;}
+      .tag--penale {background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33;}
+      .tag--impresa {background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033;}
+    </style>
   </head>
   <body class="is-preload">
     <div id="page-wrapper">
@@ -57,76 +57,67 @@
         </div>
       </section>
 
-      <!-- Wrapper -->
-      <section id="wrapper">
+      <!-- Aree di attività -->
+      <section id="practice" class="wrapper spotlight style1">
+        <div class="inner">
+          <div class="content">
+            <h2 class="major">Aree di attività</h2>
+            <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
+            <ul class="case-list">
+              <li><span class="tag tag--civile">Civile</span><span class="divider" aria-hidden="true"></span><span class="text">Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
+              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider" aria-hidden="true"></span><span class="text">Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
+              <li><span class="tag tag--penale">Penale</span><span class="divider" aria-hidden="true"></span><span class="text">Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
+              <li><span class="tag tag--impresa">Impresa</span><span class="divider" aria-hidden="true"></span><span class="text">Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
+            </ul>
+            <a href="#contact" class="special">Prenota un appuntamento</a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Aree di attività -->
-        <section id="practice" class="wrapper spotlight style1">
-  <div class="inner">
-    <div class="content">
-      <h2 class="major">Aree di attività</h2>
-      <p>Offro supporto completo dalla fase stragiudiziale al contenzioso, con attenzione alla chiarezza dei costi e alla rapidità di risposta.</p>
-      <ul class="case-list">
-        <li><span class="tag tag--civile">Civile</span><span class="divider" aria-hidden="true"></span><span class="text">Contratti, responsabilità, proprietà, condominio, recupero crediti.</span></li>
-        <li><span class="tag tag--lavoro">Lavoro</span><span class="divider" aria-hidden="true"></span><span class="text">Licenziamenti, demansionamento, differenze retributive, procedimenti disciplinari.</span></li>
-        <li><span class="tag tag--penale">Penale</span><span class="divider" aria-hidden="true"></span><span class="text">Difesa indagati e persone offese, misure cautelari, reati contro il patrimonio.</span></li>
-        <li><span class="tag tag--impresa">Impresa</span><span class="divider" aria-hidden="true"></span><span class="text">Compliance, condizioni generali, privacy by design e consulenza continuativa.</span></li>
-      </ul>
-      <a href="#contact" class="special">Prenota un appuntamento</a>
-    </div>
-  </div>
-</section>
-
-        <!-- Metodo di lavoro -->
-        <section id="approach" class="wrapper alt spotlight style2">
-          <div class="inner">
-            <div class="content">
-              <h2 class="major">Metodo di lavoro</h2>
-              <p><strong>Ascolto</strong> e analisi preliminare, <strong>preventivo trasparente</strong>, strategia condivisa e aggiornamenti costanti. Possibilità di consulenza da remoto.</p>
+      <!-- Metodo di lavoro -->
+      <section id="approach" class="wrapper alt spotlight style2">
+        <div class="inner">
+          <div class="content">
+            <h2 class="major">Metodo di lavoro</h2>
+            <p><strong>Ascolto</strong> e analisi preliminare, <strong>preventivo trasparente</strong>, strategia condivisa e aggiornamenti costanti. Possibilità di consulenza da remoto.</p>
+            <ul>
+              <li>Primo inquadramento del caso (30 minuti).</li>
+              <li>Preventivo scritto e chiaro.</li>
+              <li>Report periodici sull'andamento.</li>
+            </ul>
+            <div style="margin-top:1rem">
+              <a href="#" id="faqBtn" class="button small">FAQ</a>
+            </div>
+            <div id="faqPanel" class="style3" style="display:none;margin-top:1rem">
+              <h3 class="major" style="margin-bottom:.5rem">Domande frequenti</h3>
               <ul>
-                <li>Primo inquadramento del caso (30 minuti).</li>
-                <li>Preventivo scritto e chiaro.</li>
-                <li>Report periodici sull'andamento.</li>
+                <li><strong>Quanto costa il primo consulto?</strong> Il primo inquadramento (30 min) è gratuito; eventuale approfondimento viene preventivato.</li>
+                <li><strong>Posso avere assistenza da remoto?</strong> Sì, via videochiamata o telefono, con firma digitale ove necessario.</li>
+                <li><strong>Come funziona il preventivo?</strong> Riceverai un preventivo scritto con tempi e attività; nessun costo nascosto.</li>
+                <li><strong>In quanto tempo rispondete?</strong> Di norma entro 24 ore lavorative.</li>
+                <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
               </ul>
-              <div style="margin-top:1rem">
-                <a href="#" id="faqBtn" class="button small">FAQ</a>
-              </div>
-              <div id="faqPanel" class="style3" style="display:none;margin-top:1rem">
-                <h3 class="major" style="margin-bottom:.5rem">Domande frequenti</h3>
-                <ul>
-                  <li><strong>Quanto costa il primo consulto?</strong> Il primo inquadramento (30 min) è gratuito; eventuale approfondimento viene preventivato.</li>
-                  <li><strong>Posso avere assistenza da remoto?</strong> Sì, via videochiamata o telefono, con firma digitale ove necessario.</li>
-                  <li><strong>Come funziona il preventivo?</strong> Riceverai un preventivo scritto con tempi e attività; nessun costo nascosto.</li>
-                  <li><strong>In quanto tempo rispondete?</strong> Di norma entro 24 ore lavorative.</li>
-                  <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
-                </ul>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Casi recenti -->
-        <section id="cases" class="wrapper spotlight style3">
-  <div class="inner">
-    <div class="content">
-      <h2 class="major">Casi recenti</h2>
-      <p>Di seguito alcuni esempi sintetici. I dati sono anonimizzati nel rispetto della deontologia professionale.</p>
-      <ul class="case-list">
-        <li><span class="tag tag--civile">Civile</span><span class="divider" aria-hidden="true"></span><span class="text"><span class="case-date">12/09/2025</span> — Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
-        <li><span class="tag tag--lavoro">Lavoro</span><span class="divider" aria-hidden="true"></span><span class="text"><span class="case-date">28/07/2025</span> — Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
-        <li><span class="tag tag--penale">Penale</span><span class="divider" aria-hidden="true"></span><span class="text"><span class="case-date">15/06/2025</span> — Difesa per furto aggravato – assoluzione in primo grado</span></li>
-        <li><span class="tag tag--impresa">Impresa</span><span class="divider" aria-hidden="true"></span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e‑commerce</span></li>
-        <li><span class="tag tag--civile">Civile</span><span class="divider" aria-hidden="true"></span><span class="text"><span class="case-date">18/03/2025</span> — Mediazione condominiale – riduzione spese straordinarie</span></li>
-      </ul>
-      <a href="#contact" class="special">Hai un caso simile?</a>
-    </div>
-  </div>
-</section>
-              <a href="#contact" class="special">Hai un caso simile?</a>
-            </div>
+      <!-- Casi recenti -->
+      <section id="cases" class="wrapper spotlight style3">
+        <div class="inner">
+          <div class="content">
+            <h2 class="major">Casi recenti</h2>
+            <p>Di seguito alcuni esempi sintetici. I dati sono anonimizzati nel rispetto della deontologia professionale.</p>
+            <ul class="case-list">
+              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">12/09/2025</span> — Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
+              <li><span class="tag tag--lavoro">Lavoro</span><span class="divider"></span><span class="text"><span class="case-date">28/07/2025</span> — Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
+              <li><span class="tag tag--penale">Penale</span><span class="divider"></span><span class="text"><span class="case-date">15/06/2025</span> — Difesa per furto aggravato – assoluzione in primo grado</span></li>
+              <li><span class="tag tag--impresa">Impresa</span><span class="divider"></span><span class="text"><span class="case-date">02/05/2025</span> — Redazione condizioni generali e privacy policy e‑commerce</span></li>
+              <li><span class="tag tag--civile">Civile</span><span class="divider"></span><span class="text"><span class="case-date">18/03/2025</span> — Mediazione condominiale – riduzione spese straordinarie</span></li>
+            </ul>
+            <a href="#contact" class="special">Hai un caso simile?</a>
           </div>
-        </section>
-
+        </div>
       </section>
 
       <!-- Footer -->
@@ -151,7 +142,6 @@
           </ul>
         </div>
       </section>
-
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
