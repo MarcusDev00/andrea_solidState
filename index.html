@@ -7,11 +7,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Studio Andrea Solari | Avvocato a Cagliari</title>
-    <meta name="description" content="Avvocato Solari: consulenza e assistenza legale in diritto civile, penale e lavoro. Appuntamenti rapidi e trasparenti a Cagliari e online." />
+    <title>Studio Legale Rossi | Avvocato a Cagliari</title>
+    <meta name="description" content="Studio Legale Rossi: consulenza e assistenza legale in diritto civile, penale e lavoro. Appuntamenti rapidi e trasparenti a Cagliari e online." />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
+    <style>
+    /* Casi recenti: allineamento e tag colorati */
+    .case-list{list-style:none;margin:0;padding:0}
+    .case-list li{display:grid;grid-template-columns:max-content 1fr;gap:.75rem;align-items:start;margin:.5rem 0}
+    .tag{font-weight:600;font-size:.9rem;padding:.15rem .5rem;border-radius:999px;line-height:1;white-space:nowrap}
+    .tag--civile{background:#2a84ff1a;color:#2a84ff;border:1px solid #2a84ff33}
+    .tag--lavoro{background:#ffb7031a;color:#ffb703;border:1px solid #ffb70333}
+    .tag--penale{background:#ef476f1a;color:#ef476f;border:1px solid #ef476f33}
+    .tag--impresa{background:#06d6a01a;color:#06d6a0;border:1px solid #06d6a033}
+    .case-date{opacity:.8;margin-right:.35rem}
+  </style>
+</head>
   <body class="is-preload">
 
     <!-- Page Wrapper -->
@@ -19,7 +30,7 @@
 
       <!-- Header -->
       <header id="header" class="alt">
-        <h1><a href="#banner" aria-label="Vai all'inizio">Studio Andrea Solari</a></h1>
+        <h1><a href="#banner" aria-label="Vai all'inizio">Studio Legale Rossi</a></h1>
         <nav>
           <!-- Bottoni richiesti: rimandano al form email (#contact) e ai casi recenti (#cases) -->
           <a href="#cases" class="button small">Casi recenti</a>
@@ -47,7 +58,7 @@
       <section id="banner" role="banner" aria-label="Intestazione">
         <div class="inner">
           <div class="logo" aria-hidden="true"><span class="icon fa-scale-balanced"></span></div>
-          <h2>Avvocato Andrea Solari</h2>
+          <h2>Studio Legale Rossi</h2>
           <p>Consulenza e assistenza legale in <strong>diritto civile</strong>, <strong>penale</strong> e <strong>lavoro</strong>. Ricevo a Cagliari e online.</p>
           <ul class="actions">
             <li><a href="#cases" class="button">Vedi casi recenti</a></li>
@@ -78,19 +89,32 @@
 
         <!-- Metodo di lavoro -->
         <section id="approach" class="wrapper alt spotlight style2">
-          <div class="inner">
-            <div class="content">
-              <h2 class="major">Metodo di lavoro</h2>
-              <p><strong>Ascolto</strong> e analisi preliminare, <strong>preventivo trasparente</strong>, strategia condivisa e aggiornamenti costanti. Possibilità di consulenza da remoto.</p>
-              <ul>
-                <li>Primo inquadramento del caso (30 minuti).</li>
-                <li>Preventivo scritto e chiaro.</li>
-                <li>Report periodici sull'andamento.</li>
-              </ul>
-              <a href="#contact" class="special">Parliamone</a>
-            </div>
-          </div>
-        </section>
+  <div class="inner">
+    <div class="content">
+      <h2 class="major">Metodo di lavoro</h2>
+      <p><strong>Ascolto</strong> e analisi preliminare, <strong>preventivo trasparente</strong>, strategia condivisa e aggiornamenti costanti. Possibilità di consulenza da remoto.</p>
+      <ul>
+        <li>Primo inquadramento del caso (30 minuti).</li>
+        <li>Preventivo scritto e chiaro.</li>
+        <li>Report periodici sull'andamento.</li>
+      </ul>
+      <div style="margin-top:1rem">
+        <a href="#" id="faqBtn" class="button small">FAQ</a>
+      </div>
+      <div id="faqPanel" class="style3" style="display:none;margin-top:1rem">
+        <h3 class="major" style="margin-bottom:.5rem">Domande frequenti</h3>
+        <ul>
+          <li><strong>Quanto costa il primo consulto?</strong> Il primo inquadramento (30 min) è gratuito; eventuale approfondimento viene preventivato.</li>
+          <li><strong>Posso avere assistenza da remoto?</strong> Sì, via videochiamata o telefono, con firma digitale ove necessario.</li>
+          <li><strong>Come funziona il preventivo?</strong> Riceverai un preventivo scritto con tempi e attività; nessun costo nascosto.</li>
+          <li><strong>In quanto tempo rispondete?</strong> Di norma entro 24 ore lavorative.</li>
+          <li><strong>Gestite anche aziende?</strong> Sì, consulenza continuativa e redazione contrattualistica.</li>
+        </ul>
+      </div>
+      <a href="#contact" class="special">Parliamone</a>
+    </div>
+  </div>
+</section>
 
         <!-- Casi recenti (sostituisce la galleria immagini) -->
         <section id="cases" class="wrapper spotlight style3" aria-labelledby="cases-title">
@@ -98,14 +122,13 @@
             <div class="content">
               <h2 class="major" id="cases-title">Casi recenti</h2>
               <p>Di seguito alcuni esempi sintetici. I dati sono anonimizzati nel rispetto della deontologia professionale.</p>
-              <ul class="plain">
-                <!-- Formato richiesto: [tipologia] [Data] nome del caso -->
-                <li>[Civile] [12/09/2025] Risarcimento danni da sinistro stradale – accordo transattivo favorevole</li>
-                <li>[Lavoro] [28/07/2025] Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</li>
-                <li>[Penale] [15/06/2025] Difesa per furto aggravato – assoluzione in primo grado</li>
-                <li>[Impresa] [02/05/2025] Redazione condizioni generali e privacy policy e‑commerce</li>
-                <li>[Civile] [18/03/2025] Mediazione condominiale – riduzione spese straordinarie</li>
-              </ul>
+              <ul class="case-list">
+  <li><span class="tag tag--civile">Civile</span><span class="case-text"><span class="case-date">[12/09/2025]</span>Risarcimento danni da sinistro stradale – accordo transattivo favorevole</span></li>
+  <li><span class="tag tag--lavoro">Lavoro</span><span class="case-text"><span class="case-date">[28/07/2025]</span>Impugnazione licenziamento per giustificato motivo oggettivo – reintegra</span></li>
+  <li><span class="tag tag--penale">Penale</span><span class="case-text"><span class="case-date">[15/06/2025]</span>Difesa per furto aggravato – assoluzione in primo grado</span></li>
+  <li><span class="tag tag--impresa">Impresa</span><span class="case-text"><span class="case-date">[02/05/2025]</span>Redazione condizioni generali e privacy policy e‑commerce</span></li>
+  <li><span class="tag tag--civile">Civile</span><span class="case-text"><span class="case-date">[18/03/2025]</span>Mediazione condominiale – riduzione spese straordinarie</span></li>
+</ul>
               <a href="#contact" class="special">Hai un caso simile?</a>
             </div>
           </div>
@@ -173,7 +196,19 @@
       })();
     </script>
 
-  </body>
+    <script>
+    // Toggle FAQ
+    (function(){
+      var b = document.getElementById('faqBtn');
+      var p = document.getElementById('faqPanel');
+      if(b && p){
+        b.addEventListener('click', function(e){
+          e.preventDefault();
+          var open = p.style.display !== 'none';
+          p.style.display = open ? 'none' : 'block';
+        });
+      }
+    })();
+  </script>
+</body>
 </html>
-
-
