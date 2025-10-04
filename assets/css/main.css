@@ -99,15 +99,13 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-		background-size: auto,
- cover;
-		background-attachment: fixed,
- fixed;
-		background-position: center,
- center;
-	}
+  background-color: #0f2e1f; /* verde scuro di base */
+  background-image: linear-gradient(to top, rgba(15, 46, 31, 0.85), rgba(20, 60, 40, 0.85)), url("../../images/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -4154,3 +4152,4 @@ input, select, textarea {
 		}
 
 	}
+
